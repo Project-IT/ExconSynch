@@ -51,7 +51,6 @@ public class testClass {
         for (Appointment appt : findResults.getItems()) {
 
             appt.load();                                                                                                     // Loads event
-
             String s = appt.getBody().toString();                                                                            // Changes the Calendar Event body to a simple String
             Body.add(s);                                                                                                     // Adds String to JSON Array
         }
