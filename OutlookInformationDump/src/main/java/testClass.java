@@ -63,7 +63,7 @@ public class testClass {
     }
 
 
-    static class RedirectionUrlCallback implements IAutodiscoverRedirectionUrl {                                             // Simple error checker for te URI
+    static class RedirectionUrlCallback implements IAutodiscoverRedirectionUrl {                                             // Simple error checker for the URI
         public boolean autodiscoverRedirectionUrlValidationCallback(
                 String redirectionUrl) {
             return redirectionUrl.toLowerCase().startsWith("https://");
