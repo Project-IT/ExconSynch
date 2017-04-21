@@ -26,7 +26,7 @@ public class testClass {
     public static void main(String[] args) throws Exception {
 
         Scanner sE = new Scanner(System.in);                                                                                // Reads input from standard input device
-        FileWriter fw = new FileWriter("output.JSON");                                                                     // Creates a dumpfile
+        FileWriter fw = new FileWriter("output.JSON");                                                                      // Creates a dumpfile
         JSONObject obj = new JSONObject();                                                                                  // Creates a JSON object
         JSONArray Body = new JSONArray();                                                                                   // Creates a JSON array for the event body
 
@@ -42,7 +42,7 @@ public class testClass {
         service.autodiscoverUrl(name, new RedirectionUrlCallback());                                                         // Finds the URI for the E-mail
 
 
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");                                             // Sets the Date Format
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");                                            // Sets the Date Format
         Date startDate = formatter.parse("2016-05-01 12:00:00");                                                             // Sets start Date
         Date endDate = formatter.parse("2017-05-30 13:00:00");                                                               // Sets end Date
         CalendarFolder cf = CalendarFolder.bind(service, WellKnownFolderName.Calendar);                                      // Defines which Calendar Folder to use
