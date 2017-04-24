@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="lib28">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle243/version0.0/httpservice-bridge-0.6.2.jar-embedded/META-INF/lib/httpservice-bridge-legacy-0.6.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle243/version0.0/httpservice-bridge-0.6.2.jar-embedded/META-INF/lib/org.apache.felix.webconsole-1.2.8.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

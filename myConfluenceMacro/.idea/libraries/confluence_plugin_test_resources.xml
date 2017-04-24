@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="confluence-plugin-test-resources">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/target/confluence/confluence-plugin-test-resources.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

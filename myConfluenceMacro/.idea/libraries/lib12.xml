@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="lib12">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle142/version0.0/atlassian-gadgets-oauth-service-provider-plugin-3.3.24.jar-embedded/META-INF/lib/atlassian-spring-scanner-annotation-1.2.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle142/version0.0/atlassian-gadgets-oauth-service-provider-plugin-3.3.24.jar-embedded/META-INF/lib/atlassian-spring-scanner-runtime-1.2.11.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

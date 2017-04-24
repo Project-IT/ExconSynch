@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="confluence-api-5.4-OD-1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle103/version0.0/confluence-ui-rest-5.10.7_1475121654000.jar-embedded/META-INF/lib/confluence-api-5.4-OD-1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="bundle1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle12/version0.0/bundle.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

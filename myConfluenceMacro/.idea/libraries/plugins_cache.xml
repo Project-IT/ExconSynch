@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="plugins-cache">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-cache/1493026719958myConfluenceMacro-1.0.0-SNAPSHOT-tests.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-cache/1493037684298myConfluenceMacro-1.0.0-SNAPSHOT-tests.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-cache/1493037682737myConfluenceMacro-1.0.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-cache/1493027310543myConfluenceMacro-1.0.0-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

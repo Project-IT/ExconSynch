@@ -1,0 +1,32 @@
+<component name="libraryTable">
+  <library name="lib16">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/target/container/tomcat8x/apache-tomcat-8.0.36/lib/tomcat-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/container/tomcat8x/apache-tomcat-8.0.36/lib/catalina-storeconfig.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/container/tomcat8x/apache-tomcat-8.0.36/lib/tomcat-util-scan.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/container/tomcat8x/apache-tomcat-8.0.36/lib/el-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/container/tomcat8x/apache-tomcat-8.0.36/lib/jasper-el.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/container/tomcat8x/apache-tomcat-8.0.36/lib/ecj-4.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/container/tomcat8x/apache-tomcat-8.0.36/lib/tomcat-util.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/container/tomcat8x/apache-tomcat-8.0.36/lib/catalina.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/container/tomcat8x/apache-tomcat-8.0.36/lib/tomcat-coyote.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/container/tomcat8x/apache-tomcat-8.0.36/lib/tomcat-websocket.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/container/tomcat8x/apache-tomcat-8.0.36/lib/tomcat-dbcp.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/container/tomcat8x/apache-tomcat-8.0.36/lib/catalina-ha.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/container/tomcat8x/apache-tomcat-8.0.36/lib/tomcat-i18n-ja.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/container/tomcat8x/apache-tomcat-8.0.36/lib/annotations-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/container/tomcat8x/apache-tomcat-8.0.36/lib/servlet-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/container/tomcat8x/apache-tomcat-8.0.36/lib/tomcat-i18n-es.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/container/tomcat8x/apache-tomcat-8.0.36/lib/tomcat-jdbc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/container/tomcat8x/apache-tomcat-8.0.36/lib/jasper.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/container/tomcat8x/apache-tomcat-8.0.36/lib/catalina-tribes.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/container/tomcat8x/apache-tomcat-8.0.36/lib/catalina-ant.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/container/tomcat8x/apache-tomcat-8.0.36/lib/jsp-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/container/tomcat8x/apache-tomcat-8.0.36/lib/tomcat-jni.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/container/tomcat8x/apache-tomcat-8.0.36/lib/tomcat-i18n-fr.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/container/tomcat8x/apache-tomcat-8.0.36/lib/websocket-api.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

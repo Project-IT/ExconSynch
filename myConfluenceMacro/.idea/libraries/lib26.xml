@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="lib26">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle188/version0.0/atlassian-pretty-urls-plugin-2.0.0.jar-embedded/META-INF/lib/atlassian-spring-scanner-runtime-1.2.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle188/version0.0/atlassian-pretty-urls-plugin-2.0.0.jar-embedded/META-INF/lib/atlassian-util-concurrent-2.4.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle188/version0.0/atlassian-pretty-urls-plugin-2.0.0.jar-embedded/META-INF/lib/fugue-2.1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle188/version0.0/atlassian-pretty-urls-plugin-2.0.0.jar-embedded/META-INF/lib/atlassian-plugin-point-safety-0.14.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle188/version0.0/atlassian-pretty-urls-plugin-2.0.0.jar-embedded/META-INF/lib/atlassian-spring-scanner-annotation-1.2.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="nutz-0.6.1-atlassian">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle31/version0.0/confluence-editor-5.10.7_1475121652000.jar-embedded/META-INF/lib/nutz-0.6.1-atlassian.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

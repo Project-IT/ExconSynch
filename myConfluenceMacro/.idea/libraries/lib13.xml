@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="lib13">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle186/version0.0/atlassian-shortcuts-plugin-1.3.2_1475121652000.jar-embedded/META-INF/lib/json-20070829.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle186/version0.0/atlassian-shortcuts-plugin-1.3.2_1475121652000.jar-embedded/META-INF/lib/atlassian-shortcuts-module-api-1.3.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

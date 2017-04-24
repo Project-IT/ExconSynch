@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="lib8">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle244/version0.0/quickreload-1.24.1.jar-embedded/META-INF/lib/api-1.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle244/version0.0/quickreload-1.24.1.jar-embedded/META-INF/lib/jansi-1.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle244/version0.0/quickreload-1.24.1.jar-embedded/META-INF/lib/jpathwatch-0.95.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle244/version0.0/quickreload-1.24.1.jar-embedded/META-INF/lib/atlassian-spring-scanner-annotation-1.2.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle244/version0.0/quickreload-1.24.1.jar-embedded/META-INF/lib/gson-2.2.2-atlassian-1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle244/version0.0/quickreload-1.24.1.jar-embedded/META-INF/lib/fugue-2.1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle244/version0.0/quickreload-1.24.1.jar-embedded/META-INF/lib/org.apache.sling.commons.osgi-2.0.4-incubator.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle244/version0.0/quickreload-1.24.1.jar-embedded/META-INF/lib/quickreload-jira-support-1.24.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle244/version0.0/quickreload-1.24.1.jar-embedded/META-INF/lib/atlassian-spring-scanner-runtime-1.2.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle244/version0.0/quickreload-1.24.1.jar-embedded/META-INF/lib/joor-0.9.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

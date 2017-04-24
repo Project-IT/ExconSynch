@@ -1,0 +1,23 @@
+<component name="libraryTable">
+  <library name="atlassian-bundled-plugins-setup1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/target/confluence/webapp/WEB-INF/atlassian-bundled-plugins-setup/confluence-language-pack-ko_KR-5.10.0.rc1-v2r83828-2016-06-12.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/webapp/WEB-INF/atlassian-bundled-plugins-setup/soy-template-plugin-3.4.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/webapp/WEB-INF/atlassian-bundled-plugins-setup/confluence-language-pack-es_ES-5.10.0.rc1-v2r17723-2016-06-06.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/webapp/WEB-INF/atlassian-bundled-plugins-setup/jquery-1.7.2.1-confluence-custom-m03.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/webapp/WEB-INF/atlassian-bundled-plugins-setup/confluence-sal-setup-plugin-5.10.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/webapp/WEB-INF/atlassian-bundled-plugins-setup/auiplugin-5.9.24.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/webapp/WEB-INF/atlassian-bundled-plugins-setup/confluence-aui-staging-5.10.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/webapp/WEB-INF/atlassian-bundled-plugins-setup/atlassian-plugins-webresource-plugin-3.5.19-0d24cbc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/webapp/WEB-INF/atlassian-bundled-plugins-setup/confluence-language-pack-pt_BR-5.10.0.rc1-v2r52894-2016-08-09.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/webapp/WEB-INF/atlassian-bundled-plugins-setup/confluence-language-pack-de_DE-5.10.0.rc1-v2r13072-2016-08-02.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/webapp/WEB-INF/atlassian-bundled-plugins-setup/confluence-language-pack-en_US-5.10.0.rc1-v2r9676-2016-06-06.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/webapp/WEB-INF/atlassian-bundled-plugins-setup/confluence-language-pack-fr_FR-5.10.0.rc1-v2r5665-2016-06-15.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/webapp/WEB-INF/atlassian-bundled-plugins-setup/confluence-language-pack-ja_JP-5.10.0.rc1-v2r26124-2016-08-02.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/webapp/WEB-INF/atlassian-bundled-plugins-setup/less-transformer-plugin-3.2.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/webapp/WEB-INF/atlassian-bundled-plugins-setup/confluence-language-pack-ru_RU-5.10.0.rc1-v2r86751-2016-08-04.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle160/version0.0/atlassian-oauth-service-provider-plugin-2.0.2_1475121652000.jar-embedded/META-INF/lib/atlassian-oauth-shared-2.0.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle160/version0.0/atlassian-oauth-service-provider-plugin-2.0.2_1475121652000.jar-embedded/META-INF/lib/atlassian-scheduler-compat-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle160/version0.0/atlassian-oauth-service-provider-plugin-2.0.2_1475121652000.jar-embedded/META-INF/lib/oauth-provider-20090531.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle160/version0.0/atlassian-oauth-service-provider-plugin-2.0.2_1475121652000.jar-embedded/META-INF/lib/oauth-20090617.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle160/version0.0/atlassian-oauth-service-provider-plugin-2.0.2_1475121652000.jar-embedded/META-INF/lib/atlassian-oauth-bridge-2.0.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

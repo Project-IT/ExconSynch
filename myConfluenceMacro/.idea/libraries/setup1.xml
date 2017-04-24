@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="setup1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/target/confluence/webapp/WEB-INF/classes/com/atlassian/confluence/setup/demo-site.zip!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/webapp/WEB-INF/classes/com/atlassian/confluence/setup/atlassian-bundled-plugins.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

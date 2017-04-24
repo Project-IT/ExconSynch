@@ -1,0 +1,19 @@
+<component name="libraryTable">
+  <library name="lib20">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle189/version0.0/confluence-cql-plugin-3.0.4.jar-embedded/META-INF/lib/reflections-0.9.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle189/version0.0/confluence-cql-plugin-3.0.4.jar-embedded/META-INF/lib/confluence-query-lang-spi-3.0.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle189/version0.0/confluence-cql-plugin-3.0.4.jar-embedded/META-INF/lib/annotations-2.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle189/version0.0/confluence-cql-plugin-3.0.4.jar-embedded/META-INF/lib/atlassian-spring-scanner-annotation-1.2.13.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle189/version0.0/confluence-cql-plugin-3.0.4.jar-embedded/META-INF/lib/atlassian-query-lang-3.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle189/version0.0/confluence-cql-plugin-3.0.4.jar-embedded/META-INF/lib/atlassian-query-lang-spi-3.0.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle189/version0.0/confluence-cql-plugin-3.0.4.jar-embedded/META-INF/lib/antlr4-runtime-4.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle189/version0.0/confluence-cql-plugin-3.0.4.jar-embedded/META-INF/lib/javassist-3.20.0-GA.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle189/version0.0/confluence-cql-plugin-3.0.4.jar-embedded/META-INF/lib/antlr4-annotations-4.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle189/version0.0/confluence-cql-plugin-3.0.4.jar-embedded/META-INF/lib/org.abego.treelayout.core-1.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle189/version0.0/confluence-cql-plugin-3.0.4.jar-embedded/META-INF/lib/atlassian-spring-scanner-runtime-1.2.13.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

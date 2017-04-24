@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="lib5">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle93/version0.0/confluence-sal-plugin-5.10.7_1475121650000.jar-embedded/META-INF/lib/atlassian-secure-utils-3.2.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle93/version0.0/confluence-sal-plugin-5.10.7_1475121650000.jar-embedded/META-INF/lib/sal-core-3.0.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle93/version0.0/confluence-sal-plugin-5.10.7_1475121650000.jar-embedded/META-INF/lib/confluence-sal-base-5.10.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle93/version0.0/confluence-sal-plugin-5.10.7_1475121650000.jar-embedded/META-INF/lib/sal-trust-api-3.0.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle93/version0.0/confluence-sal-plugin-5.10.7_1475121650000.jar-embedded/META-INF/lib/sal-trusted-apps-plugin-support-3.0.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

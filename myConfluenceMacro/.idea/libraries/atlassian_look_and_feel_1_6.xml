@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="atlassian-look-and-feel-1.6">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle70/version0.0/confluence-lookandfeel-5.10.7_1475121652000.jar-embedded/META-INF/lib/atlassian-look-and-feel-1.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

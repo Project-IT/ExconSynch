@@ -1,0 +1,22 @@
+<component name="libraryTable">
+  <library name="lib22">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle143/version0.0/atlassian-gadgets-opensocial-plugin-3.3.24.jar-embedded/META-INF/lib/shindig-features-1.3.4-atlassian-hosted.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle143/version0.0/atlassian-gadgets-opensocial-plugin-3.3.24.jar-embedded/META-INF/lib/guice-1.0-atlassian-2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle143/version0.0/atlassian-gadgets-opensocial-plugin-3.3.24.jar-embedded/META-INF/lib/oauth-20090617.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle143/version0.0/atlassian-gadgets-opensocial-plugin-3.3.24.jar-embedded/META-INF/lib/atlassian-spring-scanner-annotation-1.2.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle143/version0.0/atlassian-gadgets-opensocial-plugin-3.3.24.jar-embedded/META-INF/lib/snappy-java-1.1.1.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle143/version0.0/atlassian-gadgets-opensocial-plugin-3.3.24.jar-embedded/META-INF/lib/atlassian-spring-scanner-runtime-1.2.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle143/version0.0/atlassian-gadgets-opensocial-plugin-3.3.24.jar-embedded/META-INF/lib/shindig-social-api-1.3.4-atlassian-hosted.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle143/version0.0/atlassian-gadgets-opensocial-plugin-3.3.24.jar-embedded/META-INF/lib/atlassian-oauth-bridge-1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle143/version0.0/atlassian-gadgets-opensocial-plugin-3.3.24.jar-embedded/META-INF/lib/shindig-common-1.3.4-atlassian-hosted.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle143/version0.0/atlassian-gadgets-opensocial-plugin-3.3.24.jar-embedded/META-INF/lib/shindig-gadgets-1.3.4-atlassian-hosted.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle143/version0.0/atlassian-gadgets-opensocial-plugin-3.3.24.jar-embedded/META-INF/lib/oauth-provider-20090531.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle143/version0.0/atlassian-gadgets-opensocial-plugin-3.3.24.jar-embedded/META-INF/lib/xstream-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle143/version0.0/atlassian-gadgets-opensocial-plugin-3.3.24.jar-embedded/META-INF/lib/hamcrest-all-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle143/version0.0/atlassian-gadgets-opensocial-plugin-3.3.24.jar-embedded/META-INF/lib/atlassian-gadgets-shared-3.3.24.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="lib18">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle118/version0.0/recently-viewed-plugin-5.0.0_1475121650000.jar-embedded/META-INF/lib/usercompatibility-confluence-2.1.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle118/version0.0/recently-viewed-plugin-5.0.0_1475121650000.jar-embedded/META-INF/lib/usercompatibility-sal-0.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

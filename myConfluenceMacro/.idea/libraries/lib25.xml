@@ -1,0 +1,19 @@
+<component name="libraryTable">
+  <library name="lib25">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle140/version0.0/atlassian-gadgets-directory-plugin-3.3.24.jar-embedded/META-INF/lib/commons-codec-1.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle140/version0.0/atlassian-gadgets-directory-plugin-3.3.24.jar-embedded/META-INF/lib/resolvers-httpcomponents-httpclient-3.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle140/version0.0/atlassian-gadgets-directory-plugin-3.3.24.jar-embedded/META-INF/lib/jackson-mapper-asl-1.4.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle140/version0.0/atlassian-gadgets-directory-plugin-3.3.24.jar-embedded/META-INF/lib/httpcache4j-api-3.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle140/version0.0/atlassian-gadgets-directory-plugin-3.3.24.jar-embedded/META-INF/lib/atlassian-spring-scanner-annotation-1.2.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle140/version0.0/atlassian-gadgets-directory-plugin-3.3.24.jar-embedded/META-INF/lib/atlassian-gadgets-shared-3.3.24.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle140/version0.0/atlassian-gadgets-directory-plugin-3.3.24.jar-embedded/META-INF/lib/httpcache4j-storage-api-3.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle140/version0.0/atlassian-gadgets-directory-plugin-3.3.24.jar-embedded/META-INF/lib/jackson-core-asl-1.4.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle140/version0.0/atlassian-gadgets-directory-plugin-3.3.24.jar-embedded/META-INF/lib/activation-1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle140/version0.0/atlassian-gadgets-directory-plugin-3.3.24.jar-embedded/META-INF/lib/httpcache4j-core-3.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle140/version0.0/atlassian-gadgets-directory-plugin-3.3.24.jar-embedded/META-INF/lib/atlassian-spring-scanner-runtime-1.2.11.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

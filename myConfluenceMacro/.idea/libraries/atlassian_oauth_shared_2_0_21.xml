@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="atlassian-oauth-shared-2.0.21">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle161/version0.0/atlassian-oauth-service-provider-sal-plugin-2.0.2_1475121652000.jar-embedded/META-INF/lib/atlassian-oauth-shared-2.0.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,24 @@
+<component name="libraryTable">
+  <library name="osgi-framework-bundles1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/target/container/tomcat8x/cargo-confluence-home/webapps/confluence/WEB-INF/osgi-framework-bundles/org.apache.servicemix.bundles.spring-context-4.2.5.RELEASE_1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/container/tomcat8x/cargo-confluence-home/webapps/confluence/WEB-INF/osgi-framework-bundles/gemini-blueprint-extender-2.0.5.BUILD-atlassian-m002.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/container/tomcat8x/cargo-confluence-home/webapps/confluence/WEB-INF/osgi-framework-bundles/org.apache.servicemix.bundles.spring-context-support-4.2.5.RELEASE_1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/container/tomcat8x/cargo-confluence-home/webapps/confluence/WEB-INF/osgi-framework-bundles/atlassian-plugins-osgi-bridge-4.1.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/container/tomcat8x/cargo-confluence-home/webapps/confluence/WEB-INF/osgi-framework-bundles/org.apache.servicemix.bundles.spring-web-4.2.5.RELEASE_1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/container/tomcat8x/cargo-confluence-home/webapps/confluence/WEB-INF/osgi-framework-bundles/org.apache.servicemix.bundles.spring-aop-4.2.5.RELEASE_1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/container/tomcat8x/cargo-confluence-home/webapps/confluence/WEB-INF/osgi-framework-bundles/validation-api-1.1.0.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/container/tomcat8x/cargo-confluence-home/webapps/confluence/WEB-INF/osgi-framework-bundles/org.apache.servicemix.bundles.spring-webmvc-4.2.5.RELEASE_1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/container/tomcat8x/cargo-confluence-home/webapps/confluence/WEB-INF/osgi-framework-bundles/gemini-blueprint-core-2.0.5.BUILD-atlassian-m002.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/container/tomcat8x/cargo-confluence-home/webapps/confluence/WEB-INF/osgi-framework-bundles/gemini-blueprint-io-2.0.5.BUILD-atlassian-m002.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/container/tomcat8x/cargo-confluence-home/webapps/confluence/WEB-INF/osgi-framework-bundles/org.apache.servicemix.bundles.aopalliance-1.0_6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/container/tomcat8x/cargo-confluence-home/webapps/confluence/WEB-INF/osgi-framework-bundles/org.apache.servicemix.bundles.spring-beans-4.2.5.RELEASE_1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/container/tomcat8x/cargo-confluence-home/webapps/confluence/WEB-INF/osgi-framework-bundles/org.apache.servicemix.bundles.spring-expression-4.2.5.RELEASE_1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/container/tomcat8x/cargo-confluence-home/webapps/confluence/WEB-INF/osgi-framework-bundles/org.apache.servicemix.bundles.velocity-1.7_6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/container/tomcat8x/cargo-confluence-home/webapps/confluence/WEB-INF/osgi-framework-bundles/atlassian-plugins-osgi-spring-extender-4.1.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/container/tomcat8x/cargo-confluence-home/webapps/confluence/WEB-INF/osgi-framework-bundles/org.apache.servicemix.bundles.spring-core-4.2.5.RELEASE_1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

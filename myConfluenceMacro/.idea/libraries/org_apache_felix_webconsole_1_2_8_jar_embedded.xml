@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="org.apache.felix.webconsole-1.2.8.jar-embedded">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle254/version0.0/org.apache.felix.webconsole-1.2.8.jar-embedded/commons-io-1.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle254/version0.0/org.apache.felix.webconsole-1.2.8.jar-embedded/json-20070829.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle254/version0.0/org.apache.felix.webconsole-1.2.8.jar-embedded/org.apache.felix.bundlerepository-1.0.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle254/version0.0/org.apache.felix.webconsole-1.2.8.jar-embedded/commons-fileupload-1.1.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="lib10">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle235/version0.0/confluence-macro-usage-admin-plugin-1.0.9.jar-embedded/META-INF/lib/atlassian-spring-scanner-annotation-1.2.13.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle235/version0.0/confluence-macro-usage-admin-plugin-1.0.9.jar-embedded/META-INF/lib/atlassian-spring-scanner-runtime-1.2.13.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

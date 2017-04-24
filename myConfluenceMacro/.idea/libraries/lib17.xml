@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="lib17">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle250/version0.0/plugin-data-editor-1.2_1493031056000.jar-embedded/META-INF/lib/jackson-jaxrs-1.4.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle250/version0.0/plugin-data-editor-1.2_1493031056000.jar-embedded/META-INF/lib/jackson-core-asl-1.4.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/target/confluence/home/plugins-osgi-cache/felix/felix-cache/bundle250/version0.0/plugin-data-editor-1.2_1493031056000.jar-embedded/META-INF/lib/jackson-mapper-asl-1.4.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
