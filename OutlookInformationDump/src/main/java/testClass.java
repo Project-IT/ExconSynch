@@ -14,7 +14,9 @@ import org.json.simple.JSONObject;
 
 import java.io.FileWriter;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 /**
@@ -27,8 +29,6 @@ public class testClass {
 
         Scanner sE = new Scanner(System.in);                                                                                // Reads input from standard input device
         FileWriter fw = new FileWriter("output.JSON");                                                                      // Creates a dumpfile
-        JSONObject obj = new JSONObject();                                                                                  // Creates a JSON object
-        JSONArray Body = new JSONArray();                                                                                   // Creates a JSON array for the event body
 
         System.out.println("Email address: ");
         String name = sE.next();
@@ -47,16 +47,42 @@ public class testClass {
         Date endDate = formatter.parse("2017-05-30 13:00:00");                                                               // Sets end Date
         CalendarFolder cf = CalendarFolder.bind(service, WellKnownFolderName.Calendar);                                      // Defines which Calendar Folder to use
         FindItemsResults<Appointment> findResults = cf.findAppointments(new CalendarView(startDate, endDate));               // Makes an array of Calendar Results
-        findResults.getItems();                                                                                              // Gets items
+        findResults.getItems();
+
+        LinkedList<Event> eventsList = new LinkedList<Event>();
+        // Gets items
         for (Appointment appt : findResults.getItems()) {
-            appt.load();                                                                                                     // Loads event
-            String s = appt.getBody().toString();                                                                            // Changes the Calendar Event body to a simple String
-            Body.add(s);                                                                                                     // Adds String to JSON Array
+            //Loads event
+            appt.load();
+            //make a new Event object to hold data of one appointment
+            Event event = new Event();
+
+            if (appt != null) {
+                //add subject of the event
+                event.addSubject(appt.getSubject().toString());
+                //add is the event all day event
+                event.addAllDayEvent(appt.getIsAllDayEvent());
+                //if event is not all day event
+                if (!appt.getIsAllDayEvent()) {
+                    event.addStart(appt.getStart().toString());
+                    event.addEnd(appt.getEnd().toString());
+                }
+                //add location if it is not null
+                if (appt.getLocation() != null) {
+                    event.addLocation(appt.getLocation().toString());
+                }
+                //add body
+                event.addBody(appt.getBody().toString());
+
+            }
+            //load an event to the linked list eventsList
+            eventsList.add(event);
+
+
         }
-        obj.put("Body List", Body);                                                                                          // Puts Body into JSON Object
-        fw.write(obj.toJSONString());                                                                                        // FileWriter writes the String to the Object
-        fw.close();
-        System.out.print("done!");
+            fw.write(eventsList.toString());
+            fw.close();
+            System.out.println("We are done!!! :)");
 
     }
 
@@ -69,3 +95,7 @@ public class testClass {
     }
 
 }
+
+
+///// tcomkproj2017@outlook.com
+///// ITproject
