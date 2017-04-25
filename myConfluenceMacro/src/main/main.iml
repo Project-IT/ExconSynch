@@ -8,6 +8,13 @@
         </fileset>
       </configuration>
     </facet>
+    <facet type="Spring" name="Spring2">
+      <configuration>
+        <fileset id="fileset" name="Spring Application Context" removed="false">
+          <file>file://$MODULE_DIR$/resources/META-INF/spring/plugin-context.xml</file>
+        </fileset>
+      </configuration>
+    </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />

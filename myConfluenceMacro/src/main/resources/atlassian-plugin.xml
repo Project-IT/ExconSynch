@@ -24,7 +24,6 @@
     <description key="helloworld.macro.desc"/>
     <category name="formatting"/>
     <parameters>
-    <parameter name="Name" type="string" />
     <parameter name="Username" type="string" />
     <parameter name="Password" type="string" />
 </parameters>

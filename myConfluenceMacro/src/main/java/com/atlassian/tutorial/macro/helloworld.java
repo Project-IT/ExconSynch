@@ -29,7 +29,7 @@ import java.util.Scanner;
 public class helloworld implements Macro {
 
     public String execute(Map<String, String> map, String s, ConversionContext conversionContext) throws MacroExecutionException {
-        Scanner sE = new Scanner(System.in);
+        //Scanner sE = new Scanner(System.in);
         try {
             FileWriter fw = new FileWriter("output.JSON");                                                                      // Creates a dumpfile
         } catch (IOException e) {
@@ -40,7 +40,7 @@ public class helloworld implements Macro {
         // String name = sE.next();
         //System.out.println("Password: ");
         //String pass = sE.next();
-         String pass =map.get("Password");
+        String pass =map.get("Password");
         StringBuilder output=null;
         ExchangeService service = new ExchangeService(ExchangeVersion.Exchange2010_SP2);                                     // Specifies which Exchange version, though any newer works as well
         ExchangeCredentials credentials = new WebCredentials(name, pass);                                                    // Log in with the respective Exchange account
