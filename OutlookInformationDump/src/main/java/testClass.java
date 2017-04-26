@@ -8,9 +8,7 @@ import microsoft.exchange.webservices.data.credential.ExchangeCredentials;
 import microsoft.exchange.webservices.data.credential.WebCredentials;
 import microsoft.exchange.webservices.data.search.CalendarView;
 import microsoft.exchange.webservices.data.search.FindItemsResults;
-
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
+import org.apache.commons.lang3.time.StopWatch;
 
 import java.io.FileWriter;
 import java.text.SimpleDateFormat;
@@ -28,7 +26,7 @@ public class testClass {
     public static void main(String[] args) throws Exception {
 
         Scanner sE = new Scanner(System.in);                                                                                // Reads input from standard input device
-        FileWriter fw = new FileWriter("output.JSON");                                                                      // Creates a dumpfile
+        FileWriter fw = new FileWriter("output.txt");                                                                      // Creates a dumpfile
 
         System.out.println("Email address: ");
         String name = sE.next();
@@ -37,10 +35,16 @@ public class testClass {
 
         ExchangeService service = new ExchangeService(ExchangeVersion.Exchange2010_SP2);                                     // Specifies which Exchange version, though any newer works as well
         ExchangeCredentials credentials = new WebCredentials(name, pass);                                                    // Log in with the respective Exchange account
+        StopWatch timer = new StopWatch();
+
+        timer.start();
         service.setCredentials(credentials);                                                                                 // Verifies the credentials
-
         service.autodiscoverUrl(name, new RedirectionUrlCallback());                                                         // Finds the URI for the E-mail
+        timer.stop();
 
+        double s = timer.getTime();
+        System.out.println("Time to login: " + s);
+        timer.reset();
 
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");                                            // Sets the Date Format
         Date startDate = formatter.parse("2016-05-01 12:00:00");                                                             // Sets start Date
@@ -51,6 +55,7 @@ public class testClass {
 
         LinkedList<Event> eventsList = new LinkedList<Event>();
         // Gets items
+        timer.start();
         for (Appointment appt : findResults.getItems()) {
             //Loads event
             appt.load();
@@ -80,9 +85,12 @@ public class testClass {
 
 
         }
-            fw.write(eventsList.toString());
-            fw.close();
-            System.out.println("We are done!!! :)");
+        s = timer.getTime();
+        timer.stop();
+        System.out.println("Time to get events: " + s);
+        fw.write(eventsList.toString());
+        fw.close();
+        System.out.println("We are done!!! :)");
 
     }
 
