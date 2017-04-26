@@ -9,10 +9,6 @@
     <artifactId>myConfluenceMacro</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
-    <!-- <organization>
-        <name>Example Company</name>
-        <url>http://www.example.com/</url>
-    </organization> -->
     <organization>
         <name>Atlassian SDK Tutorial</name>
         <url>http://developer.atlassian.com/</url>
