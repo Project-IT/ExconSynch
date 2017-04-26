@@ -20,13 +20,14 @@
 
         <context>myConfluenceMacro</context>
     </web-resource>
-    <xhtml-macro name="helloworld" class="com.atlassian.tutorial.macro.helloworld" key='helloworld-macro'>
-    <description key="helloworld.macro.desc"/>
-    <category name="formatting"/>
-    <parameters>
-    <parameter name="Username" type="string" />
-    <parameter name="Password" type="string" />
-</parameters>
-</xhtml-macro>
+
+    <xhtml-macro name="ExCon" class="com.atlassian.tutorial.macro.ExCon" key='ExCon-macro'>
+    	<description key="ExCon.macro.desc"/>
+    	<category name="formatting"/>
+    	<parameters>
+    		<parameter name="Username" type="string" />
+    		<parameter name="Password" type="string" />
+    	</parameters>
+    </xhtml-macro>
     
 </atlassian-plugin>
