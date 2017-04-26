@@ -1,3 +1,9 @@
+This is the entire confluence server with a macro plugin installed.
+
+The macro plugin simply takes an exchange account details and then prints whatever is in the calendar of the account.
+
+COMMENTED SINCE BEFORE:
+
 You have successfully created an Atlassian Plugin!
 
 Here are the SDK commands you'll use immediately:
