@@ -24,14 +24,12 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
-public class ExCon implements Macro
-{
+public class ExCon implements Macro {
 
-    public String execute(Map<String, String> map, String s, ConversionContext conversionContext) throws MacroExecutionException
-    {
+    public String execute(Map<String, String> map, String s, ConversionContext conversionContext) throws MacroExecutionException {
 
-        String username =map.get("Username");
-        String password =map.get("Password");
+        String username = map.get("Username");
+        String password = map.get("Password");
 
         // Specifies Exchange version, (any newer works as well)
         ExchangeService service = new ExchangeService(ExchangeVersion.Exchange2010_SP2);
@@ -83,66 +81,72 @@ public class ExCon implements Macro
         }
 
         findResults.getItems();
-        LinkedList<Event> eventsList = new LinkedList<Event>();
+        LinkedList<String> eventsList = new LinkedList<String>();
+
         for (Appointment appt : findResults.getItems()) {
-            // Loads event
+            // Make a new Event object to hold data of one appointment
+            Event event = new Event();
+
+            // Loads appt
             try {
                 appt.load();
             } catch (Exception e) {
                 e.printStackTrace();
             }
 
-            // Make a new Event object to hold data of one appointment
-            Event event = new Event();
-
-            if (appt != null) {
-                // Add subject of the event
-                try {
-                    event.addSubject(appt.getSubject().toString());
-                } catch (ServiceLocalException e) {
-                    e.printStackTrace();
-                }
-
-                // Add an "all day" event
-                try {
-                    event.addAllDayEvent(appt.getIsAllDayEvent());
-                } catch (ServiceLocalException e) {
-                    e.printStackTrace();
-                }
-
-                // Add a "not all day" event
-                try {
-                    if (!appt.getIsAllDayEvent()) {
-                        event.addStart(appt.getStart().toString());
-                        event.addEnd(appt.getEnd().toString());
-                    }
-                } catch (ServiceLocalException e) {
-                    e.printStackTrace();
-                }
-
-                // Add location of the event (if it exists)
-                try {
-                    if (appt.getLocation() != null) {
-                        event.addLocation(appt.getLocation().toString());
-                    }
-                } catch (ServiceLocalException e) {
-                    e.printStackTrace();
-                }
-
-                // Add the body of the event
-                try {
-                    event.addBody(appt.getBody().toString());
-                } catch (ServiceLocalException e) {
-                    e.printStackTrace();
-                }
-
+            // Add subject of the event
+            try {
+                event.addSubject(appt.getSubject());
+            } catch (ServiceLocalException e) {
+                e.printStackTrace();
             }
+
+            // Add an "all day" event
+            try {
+                event.addAllDayEvent(appt.getIsAllDayEvent().toString());
+            } catch (ServiceLocalException e) {
+                e.printStackTrace();
+            }
+
+            // Add a "not all day" event
+            try {
+                if (!appt.getIsAllDayEvent()) {
+                    event.addStart(appt.getStart().toString());
+                    event.addEnd(appt.getEnd().toString());
+                }
+            } catch (ServiceLocalException e) {
+                e.printStackTrace();
+            }
+
+            // Add location of the event (if it exists)
+            try {
+                if (appt.getLocation() != null) {
+                    event.addLocation(appt.getLocation());
+                }
+            } catch (ServiceLocalException e) {
+                e.printStackTrace();
+            }
+
+            // Add the body of the event
+            try {
+                String poopoo = appt.getBody().toString();
+                event.addBody(poopoo);
+            } catch (ServiceLocalException e) {
+                e.printStackTrace();
+            }
+
             // Load an event to the linked list eventsList
-            eventsList.add(event);
+            eventsList.add(event.stringer());
 
         }
 
-        return eventsList.toString();
+        String result = "";
+
+        for (String events : eventsList) {
+            result += events;
+        }
+
+        return result;
     }
 
     // Simple error checker for the URI
@@ -151,9 +155,14 @@ public class ExCon implements Macro
                 String redirectionUrl) {
             return redirectionUrl.toLowerCase().startsWith("https://");
         }
+
     }
 
-    public BodyType getBodyType() { return BodyType.NONE; }
+    public BodyType getBodyType() {
+        return BodyType.NONE;
+    }
 
-    public OutputType getOutputType() { return OutputType.BLOCK; }
+    public OutputType getOutputType() {
+        return OutputType.BLOCK;
+    }
 }
