@@ -171,12 +171,24 @@ public class ExCon implements Macro {
 
         }
 
-        try {
+        /*try {
+
+         */
             //1. Get connection to database
-            Connection myConn = DriverManager.getConnection("jdbc:mysql://130.229.188.219:3306/confluence", "tcomkproj2017", "tcomkproj2017");
-            //2. Create a statement
-            Statement myStm = myConn.createStatement();
-            //3. Execute sql query
+        Connection myConn = null;
+        try {
+            myConn = DriverManager.getConnection("jdbc:mysql://130.229.188.219:3306/confluence", "tcomkproj2017", "tcomkproj2017");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        //2. Create a statement
+        Statement myStm = null;
+        try {
+            myStm = myConn.createStatement();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        //3. Execute sql query
 
             //this section is to FETCH data
            /* ResultSet myRs = myStm.executeQuery("SELECT * FROM confluence.ao_950dc3_tc_events;");
@@ -190,14 +202,29 @@ public class ExCon implements Macro {
             //  "VALUES ('1', '1493235152154', '', '1493251200000', '80', '1493235152154', '', '4028b8815babae10015babb056780000', NULL, NULL, NULL, '0', '1493164800000', 'dfa1eb25-eef12-42c8-abcf-71dec96b58ac', 'appt.getSubject().toString()', NULL, '1493244000000', '1493157600000', '20170426T193232Z--2091550207@localhost')");
 
 
+        try {
+           // myStm.executeUpdate("INSERT INTO confluence.ao_950dc3_tc_events (ALL_DAY, CREATED, DESCRIPTION, END, LAST_MODIFIED, LOCATION, ORGANISER, RECURRENCE_ID_TIMESTAMP, RECURRENCE_RULE, REMINDER_SETTING_ID, SEQUENCE, START, SUB_CALENDAR_ID, SUMMARY, URL, UTC_END, UTC_START, VEVENT_UID)\n" +
+                  //  "VALUES ('1', '1493298045425', '', '1478131200000', '1493235152154', '', '4028b8815babae10015babb056780000', NULL, NULL, NULL, '5', '1478044800000', 'dfa1eb25-eef12-42c8-abcf-71dec96b58ac', '" + trying + "' , NULL, '1493244000000', '1493157600000', '20170426T193232Z--2091550207@130.229.188.219')");
             myStm.executeUpdate("INSERT INTO confluence.ao_950dc3_tc_events (ALL_DAY, CREATED, DESCRIPTION, END, LAST_MODIFIED, LOCATION, ORGANISER, RECURRENCE_ID_TIMESTAMP, RECURRENCE_RULE, REMINDER_SETTING_ID, SEQUENCE, START, SUB_CALENDAR_ID, SUMMARY, URL, UTC_END, UTC_START, VEVENT_UID)\n" +
-                    "VALUES ('1', '1493298045425', '', '1478131200000', '1493235152154', '', '4028b8815babae10015babb056780000', NULL, NULL, NULL, '0', '1478044800000', 'dfa1eb25-eef12-42c8-abcf-71dec96b58ac', '" + trying + "' , NULL, '1493244000000', '1493157600000', '20170426T193232Z--2091550207@localhost')");
-
-            myConn.close(); //closing connection
-
-        } catch (Exception exc) {
-            exc.printStackTrace();
+                    "VALUES ('0', '1493235152154', NULL, '1493654400000', NULL, NULL, NULL, NULL, NULL, NULL, '5', '1493632800000', 'dfa1eb25-ef12-42c8-abcf-71dec96b58ac', '"+ trying +"', NULL, '1493647200000', '1493625600000', '20170426T193232Z--2092550207@130.229.188.219')");
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
+       /* try {
+            myStm.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }*/
+        try {
+            myConn.close(); //closing connection
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+        /*catch (Exception exc) {
+            exc.printStackTrace();
+        }*/
 
         return "done";
 
