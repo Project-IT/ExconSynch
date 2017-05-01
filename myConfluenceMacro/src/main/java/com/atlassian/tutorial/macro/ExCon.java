@@ -31,8 +31,7 @@ public class ExCon implements Macro {
 
         String username = map.get("Username");
         String password = map.get("Password");
-        String trying = "before";
-
+        String fromOutlook = "before";
 
         // Specifies Exchange version, (any newer works as well)
         ExchangeService service = new ExchangeService(ExchangeVersion.Exchange2010_SP2);
@@ -86,158 +85,68 @@ public class ExCon implements Macro {
         findResults.getItems();
 
         LinkedList<Event> eventsList = new LinkedList<Event>();
-        for (Appointment appt : findResults.getItems()) {
-
-
-            // Make a new Event object to hold data of one appointment
-            // Loads appt
-            try {
-                appt.load();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-            // Make a new Event object to hold data of one appointment
-            Event event = new Event();
-            try {
-
-                trying = appt.getSubject().toString();
-                System.out.println(trying);
-            } catch (ServiceLocalException e) {
-                e.printStackTrace();
-            }
-
-         /*   if (appt != null) {
-                // Add subject of the event
+        eventParameters ep=new eventParameters();
+        Connection myConn=null;
+        eventInserter ei=new eventInserter();
+        try {
+            ep.setUser("tcomkproj2017");
+            ep.setPassword("tcomkproj2017");
+            ep.setdbUrl("localhost:3306/confluence");
+            myConn = DriverManager.getConnection(ep.getDbUrl(), ep.getUser(), ep.getPassword());
+            for (Appointment appt : findResults.getItems()) {
+                // Make a new Event object to hold data of one appointment
+                // Loads appt
                 try {
-                    event.addSubject(appt.getSubject().toString());
+                    appt.load();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                // Make a new Event object to hold data of one appointment
+                Event event = new Event();
+                try {
+                    fromOutlook = appt.getSubject().toString();
+
+                    System.out.println(fromOutlook);
                 } catch (ServiceLocalException e) {
                     e.printStackTrace();
                 }
-
-                // Add an "all day" event
-                try {
-                    event.addAllDayEvent(appt.getIsAllDayEvent());
-                } catch (ServiceLocalException e) {
-                    e.printStackTrace();
-                }
-            // Add subject of the event
-            try {
-                event.addSubject(appt.getSubject());
-            } catch (ServiceLocalException e) {
-                e.printStackTrace();
+                ep.setAll_day("1");                //all day 1
+                ep.setCreated("1493235152154");   //created
+                ep.setDescription("");                //description
+                ep.setEnd("1493251200000");   //End
+                ep.setLast_modified("1493251200000");   //Last_Modified
+                ep.setLocation("");      //Location
+                ep.setOrganiser("4028b8815babae10015babb056780000");//Organiser
+                ep.setRecurrence_id_timestamp(0);            //rec. Id Timestamp
+                ep.setRecurrence_rule("");            //Rec. Rule
+                ep.setReminder_setting_id("");           //Reminder_SETTING_ID
+                ep.setSequence("0");              //SEQUENCE
+                ep.setStart("1493164800000");  //START
+                ep.setSub_calendar_id("dfa1eb25-ef12-42c8-abcf-71dec96b58ac");//SUB_CALENDAR_ID
+                ep.setSummary(fromOutlook);                //SUMMARY
+                ep.setUrl("NULL");           //URL
+                ep.setUtc_end("1493244000000");  //UTC_END
+                ep.setUtc_start("1493157600000");  //UTC_START
+                ep.setVevent_uid("20170426T193232Z--2091550207@localhost");//VEVENT UID
+                ei.insert(ep, myConn);
             }
-
-
-            // Add an "all day" event
-            try {
-                event.addAllDayEvent(appt.getIsAllDayEvent().toString());
-            } catch (ServiceLocalException e) {
-                e.printStackTrace();
-            }
-
-            // Add a "not all day" event
-            try {
-                if (!appt.getIsAllDayEvent()) {
-                    event.addStart(appt.getStart().toString());
-                    event.addEnd(appt.getEnd().toString());
-                }
-            } catch (ServiceLocalException e) {
-                e.printStackTrace();
-            }
-
-            // Add location of the event (if it exists)
-            try {
-                if (appt.getLocation() != null) {
-                    event.addLocation(appt.getLocation());
-                }
-            } catch (ServiceLocalException e) {
-                e.printStackTrace();
-            }
-
-            // Add the body of the event
-            try {
-                String poopoo = appt.getBody().toString();
-                event.addBody(poopoo);
-            } catch (ServiceLocalException e) {
-                e.printStackTrace();
-            }
-
-            // Load an event to the linked list eventsList
-
-            eventsList.add(event);
-/*/
-
-
+            myConn.close();
         }
-
-        /*try {
-
-         */
-            //1. Get connection to database
-        Connection myConn = null;
-        try {
-            myConn = DriverManager.getConnection("jdbc:mysql://130.229.188.219:3306/confluence", "tcomkproj2017", "tcomkproj2017");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        //2. Create a statement
-        Statement myStm = null;
-        try {
-            myStm = myConn.createStatement();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        //3. Execute sql query
-
-            //this section is to FETCH data
-           /* ResultSet myRs = myStm.executeQuery("SELECT * FROM confluence.ao_950dc3_tc_events;");
-            while (myRs.next()) {
-                System.out.println(myRs.getString("SUMMARY"));
-                //see sql queries for more info
-            }*/
-
-            //This section is to PUSH Data
-            // myStm.executeUpdate("INSERT INTO confluence.ao_950dc3_tc_events (ALL_DAY, CREATED, DESCRIPTION, END, ID, LAST_MODIFIED, LOCATION, ORGANISER, RECURRENCE_ID_TIMESTAMP, RECURRENCE_RULE, REMINDER_SETTING_ID, SEQUENCE, START, SUB_CALENDAR_ID, SUMMARY, URL, UTC_END, UTC_START, VEVENT_UID)\n" +
-            //  "VALUES ('1', '1493235152154', '', '1493251200000', '80', '1493235152154', '', '4028b8815babae10015babb056780000', NULL, NULL, NULL, '0', '1493164800000', 'dfa1eb25-eef12-42c8-abcf-71dec96b58ac', 'appt.getSubject().toString()', NULL, '1493244000000', '1493157600000', '20170426T193232Z--2091550207@localhost')");
-
-
-        try {
-           // myStm.executeUpdate("INSERT INTO confluence.ao_950dc3_tc_events (ALL_DAY, CREATED, DESCRIPTION, END, LAST_MODIFIED, LOCATION, ORGANISER, RECURRENCE_ID_TIMESTAMP, RECURRENCE_RULE, REMINDER_SETTING_ID, SEQUENCE, START, SUB_CALENDAR_ID, SUMMARY, URL, UTC_END, UTC_START, VEVENT_UID)\n" +
-                  //  "VALUES ('1', '1493298045425', '', '1478131200000', '1493235152154', '', '4028b8815babae10015babb056780000', NULL, NULL, NULL, '5', '1478044800000', 'dfa1eb25-eef12-42c8-abcf-71dec96b58ac', '" + trying + "' , NULL, '1493244000000', '1493157600000', '20170426T193232Z--2091550207@130.229.188.219')");
-            myStm.executeUpdate("INSERT INTO confluence.ao_950dc3_tc_events (ALL_DAY, CREATED, DESCRIPTION, END, LAST_MODIFIED, LOCATION, ORGANISER, RECURRENCE_ID_TIMESTAMP, RECURRENCE_RULE, REMINDER_SETTING_ID, SEQUENCE, START, SUB_CALENDAR_ID, SUMMARY, URL, UTC_END, UTC_START, VEVENT_UID)\n" +
-                    "VALUES ('0', '1493235152154', NULL, '1493654400000', NULL, NULL, NULL, NULL, NULL, NULL, '5', '1493632800000', 'dfa1eb25-ef12-42c8-abcf-71dec96b58ac', '"+ trying +"', NULL, '1493647200000', '1493625600000', '20170426T193232Z--2092550207@130.229.188.219')");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-       /* try {
-            myStm.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }*/
-        try {
-            myConn.close(); //closing connection
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-
-        /*catch (Exception exc) {
+        catch(Exception exc){
             exc.printStackTrace();
-        }*/
-
-        return "done";
-
-    }
-
-
-    // Simple error checker for the URI
-    static class RedirectionUrlCallback implements IAutodiscoverRedirectionUrl {
-        public boolean autodiscoverRedirectionUrlValidationCallback(
-                String redirectionUrl) {
-            return redirectionUrl.toLowerCase().startsWith("https://");
         }
+        return fromOutlook;
     }
+
+
+// Simple error checker for the URI
+static class RedirectionUrlCallback implements IAutodiscoverRedirectionUrl {
+    public boolean autodiscoverRedirectionUrlValidationCallback(
+            String redirectionUrl) {
+        return redirectionUrl.toLowerCase().startsWith("https://");
+    }
+
+}
 
 
     public BodyType getBodyType() {

@@ -1,0 +1,9 @@
+com\atlassian\tutorial\api\MyPluginComponent.class
+com\atlassian\tutorial\macro\ExCon.class
+com\atlassian\tutorial\impl\MyPluginComponentImpl.class
+com\atlassian\tutorial\macro\EventVerifier.class
+com\atlassian\tutorial\macro\eventInserter.class
+com\atlassian\tutorial\macro\ExCon$RedirectionUrlCallback.class
+com\atlassian\tutorial\macro\dbParameters.class
+com\atlassian\tutorial\macro\eventParameters.class
+com\atlassian\tutorial\macro\Event.class
