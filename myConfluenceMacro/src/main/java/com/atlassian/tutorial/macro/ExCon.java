@@ -111,10 +111,14 @@ public class ExCon implements Macro {
                 } catch (ServiceLocalException e) {
                     e.printStackTrace();
                 }
-                ep.setAll_day("1");                //all day 1
+                ep.setAll_day("0");                //all day 1
                 ep.setCreated("1493235152154");   //created
                 ep.setDescription("");                //description
-                ep.setEnd(ConvertTime(appt.getEnd().toString(), true));   //End
+                try {
+                    ep.setEnd(ConvertTime(appt.getEnd(), true));   //End
+                } catch (ParseException x) {
+                    x.printStackTrace();
+                }
                 ep.setLast_modified("1493251200000");   //Last_Modified
                 ep.setLocation("");      //Location
                 ep.setOrganiser("4028b8815babae10015babb056780000");//Organiser
@@ -122,13 +126,28 @@ public class ExCon implements Macro {
                 ep.setRecurrence_rule("");            //Rec. Rule
                 ep.setReminder_setting_id("");           //Reminder_SETTING_ID
                 ep.setSequence("0");              //SEQUENCE
-                ep.setStart(ConvertTime(appt.getStart().toString(), true));  //START
+                try {
+                    ep.setStart(ConvertTime(appt.getStart(), true));  //START
+                } catch (ParseException x) {
+                    x.printStackTrace();
+                }
                 ep.setSub_calendar_id("dfa1eb25-ef12-42c8-abcf-71dec96b58ac");//SUB_CALENDAR_ID
                 ep.setSummary(fromOutlook);                //SUMMARY
                 ep.setUrl("NULL");           //URL
-                ep.setUtc_end(ConvertTime(appt.getStart().toString(), false));  //UTC_END
-                ep.setUtc_start(ConvertTime(appt.getStart().toString(), false));  //UTC_START
-                ep.setVevent_uid("20170426T193232Z--2091550207@localhost");//VEVENT UID
+                try {
+                    ep.setUtc_end(ConvertTime(appt.getStart(), false));  //UTC_END
+                    ep.setUtc_start(ConvertTime(appt.getStart(), false));  //UTC_START
+                } catch (ParseException x) {
+                    x.printStackTrace();
+                }
+                try {
+                    ep.setUtc_start(ConvertTime(appt.getStart(), false));  //UTC_START
+                } catch (ParseException x) {
+                    x.printStackTrace();
+                }
+                //ep.setUtc_end("1493244000000");  //UTC_END
+                //ep.setUtc_start("1493157600000");
+                ep.setVevent_uid("20170426T193232Z--2091550207@130.229.188.219");//VEVENT UID
                 ei.insert(ep, myConn);
             }
             myConn.close();
@@ -148,14 +167,14 @@ public class ExCon implements Macro {
 
     }
 
-    private String ConvertTime(String time, boolean bool) {
+    private static String ConvertTime(Date time, boolean bool) throws Exception {
 
         Date date = null;
         SimpleDateFormat df = new SimpleDateFormat("EEE MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
 
         if (bool) {
             try {
-                date = df.parse(time);
+                date = df.parse(time.toString());
             } catch (ParseException exc) {
                 exc.printStackTrace();
             }
@@ -163,7 +182,7 @@ public class ExCon implements Macro {
         } else {
             df.setTimeZone(TimeZone.getTimeZone("UTC"));
             try {
-                date = df.parse(time);
+                date = df.parse(df.format(time));
             } catch (ParseException exc) {
                 exc.printStackTrace();
             }
