@@ -112,14 +112,22 @@ public class ExCon implements Macro {
                     e.printStackTrace();
                 }
                 ep.setAll_day("0");                //all day 1
-                ep.setCreated(ConvertTime(appt.getDateTimeCreated(), true));   //created
-                ep.setDescription("");                //description
+                try {
+                    ep.setCreated(ConvertTime(appt.getDateTimeCreated(), true));   //created
+                } catch(ParseException x){
+                    x.printStackTrace();
+                }
+                    ep.setDescription("");                //description
                 try {
                     ep.setEnd(ConvertTime(appt.getEnd(), true));   //End
                 } catch (ParseException x) {
                     x.printStackTrace();
                 }
-                ep.setLast_modified(ConvertTime(appt.getLastModifiedTime(), true));   //Last_Modified
+                try {
+                    ep.setLast_modified(ConvertTime(appt.getLastModifiedTime(), true));   //Last_Modified
+                } catch (ParseException x){
+                    x.printStackTrace();
+                }
                 ep.setLocation("");      //Location
                 ep.setOrganiser("4028b8815babae10015babb056780000");//Organiser
                 ep.setRecurrence_id_timestamp(0);            //rec. Id Timestamp
