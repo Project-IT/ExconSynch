@@ -70,6 +70,8 @@ public class EventVerifier {
 
         if (organiser.length() == 32) {
             return true;
+        } else {
+            return false;
         }
 
     }
