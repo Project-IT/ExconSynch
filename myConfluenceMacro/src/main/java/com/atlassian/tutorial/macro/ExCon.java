@@ -18,18 +18,17 @@ import microsoft.exchange.webservices.data.search.FindItemsResults;
 
 import java.io.IOException;
 import java.text.ParseException;
-import java.util.LinkedList;
-import java.util.Map;
+import java.util.*;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.sql.*;
+import java.util.Date;
 
 
 public class ExCon implements Macro {
 
     public String execute(Map<String, String> map, String s, ConversionContext conversionContext) throws MacroExecutionException {
 
-        String fromOutlook;
+        String fromOutlook = "";
         String username = map.get("Username");
         String password = map.get("Password");
 
@@ -86,9 +85,9 @@ public class ExCon implements Macro {
         findResults.getItems();
 
         LinkedList<Event> eventsList = new LinkedList<Event>();
-        eventParameters ep=new eventParameters();
+        eventParameters ep = new eventParameters();
         Connection myConn;
-        eventInserter ei=new eventInserter();
+        eventInserter ei = new eventInserter();
         try {
             ep.setUser("tcomkproj2017");
             ep.setPassword("tcomkproj2017");
@@ -115,7 +114,7 @@ public class ExCon implements Macro {
                 ep.setAll_day("1");                //all day 1
                 ep.setCreated("1493235152154");   //created
                 ep.setDescription("");                //description
-                ep.setEnd("1493251200000");   //End
+                ep.setEnd(ConvertTime(appt.getEnd().toString(), true));   //End
                 ep.setLast_modified("1493251200000");   //Last_Modified
                 ep.setLocation("");      //Location
                 ep.setOrganiser("4028b8815babae10015babb056780000");//Organiser
@@ -123,32 +122,54 @@ public class ExCon implements Macro {
                 ep.setRecurrence_rule("");            //Rec. Rule
                 ep.setReminder_setting_id("");           //Reminder_SETTING_ID
                 ep.setSequence("0");              //SEQUENCE
-                ep.setStart("1493164800000");  //START
+                ep.setStart(ConvertTime(appt.getStart().toString(), true));  //START
                 ep.setSub_calendar_id("dfa1eb25-ef12-42c8-abcf-71dec96b58ac");//SUB_CALENDAR_ID
                 ep.setSummary(fromOutlook);                //SUMMARY
                 ep.setUrl("NULL");           //URL
-                ep.setUtc_end("1493244000000");  //UTC_END
-                ep.setUtc_start("1493157600000");  //UTC_START
+                ep.setUtc_end(ConvertTime(appt.getStart().toString(), false));  //UTC_END
+                ep.setUtc_start(ConvertTime(appt.getStart().toString(), false));  //UTC_START
                 ep.setVevent_uid("20170426T193232Z--2091550207@localhost");//VEVENT UID
                 ei.insert(ep, myConn);
             }
             myConn.close();
-        }
-        catch(Exception exc){
+        } catch (Exception exc) {
             exc.printStackTrace();
         }
         return fromOutlook;
     }
 
 
-// Simple error checker for the URI
-static class RedirectionUrlCallback implements IAutodiscoverRedirectionUrl {
-    public boolean autodiscoverRedirectionUrlValidationCallback(
-            String redirectionUrl) {
-        return redirectionUrl.toLowerCase().startsWith("https://");
+    // Simple error checker for the URI
+    static class RedirectionUrlCallback implements IAutodiscoverRedirectionUrl {
+        public boolean autodiscoverRedirectionUrlValidationCallback(
+                String redirectionUrl) {
+            return redirectionUrl.toLowerCase().startsWith("https://");
+        }
+
     }
 
-}
+    private String ConvertTime(String time, boolean bool) {
+
+        Date date = null;
+        SimpleDateFormat df = new SimpleDateFormat("EEE MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
+
+        if (bool) {
+            try {
+                date = df.parse(time);
+            } catch (ParseException exc) {
+                exc.printStackTrace();
+            }
+            return String.valueOf(date.getTime());
+        } else {
+            df.setTimeZone(TimeZone.getTimeZone("UTC"));
+            try {
+                date = df.parse(time);
+            } catch (ParseException exc) {
+                exc.printStackTrace();
+            }
+            return String.valueOf(date.getTime());
+        }
+    }
 
 
     public BodyType getBodyType() {
