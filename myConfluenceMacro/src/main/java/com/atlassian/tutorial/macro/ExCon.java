@@ -8,7 +8,6 @@ import microsoft.exchange.webservices.data.autodiscover.IAutodiscoverRedirection
 import microsoft.exchange.webservices.data.core.ExchangeService;
 import microsoft.exchange.webservices.data.core.enumeration.misc.ExchangeVersion;
 import microsoft.exchange.webservices.data.core.enumeration.property.WellKnownFolderName;
-import microsoft.exchange.webservices.data.core.exception.service.local.ServiceLocalException;
 import microsoft.exchange.webservices.data.core.service.folder.CalendarFolder;
 import microsoft.exchange.webservices.data.core.service.item.Appointment;
 import microsoft.exchange.webservices.data.credential.ExchangeCredentials;
@@ -16,7 +15,6 @@ import microsoft.exchange.webservices.data.credential.WebCredentials;
 import microsoft.exchange.webservices.data.search.CalendarView;
 import microsoft.exchange.webservices.data.search.FindItemsResults;
 
-import java.io.IOException;
 import java.text.ParseException;
 import java.util.LinkedList;
 import java.util.Map;
@@ -84,25 +82,99 @@ public class ExCon implements Macro {
 
         findResults.getItems();
 
-        LinkedList<Event> eventsList = new LinkedList<Event>();
-        eventParameters ep=new eventParameters();
+        LinkedList<Outlook_Event> eventsList = new LinkedList<Outlook_Event>();
+        //Confluence_Event ep=new Confluence_Event();
         Connection myConn=null;
-        eventInserter ei=new eventInserter();
+        Confluence_Event conf_event = new Confluence_Event();
+        Outlook_Event outlookEvent = new Outlook_Event();
+
+        eventInserter is = new eventInserter();
+        conf_event.setUser("tcomkproj2017");
+        conf_event.setPassword("tcomkproj2017");
+        conf_event.setdbUrl("localhost:3306/confluence");
         try {
+            myConn = DriverManager.getConnection(conf_event.getDbUrl(), conf_event.getUser(), conf_event.getPassword());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        // Gets items
+        try {
+
+            for (Appointment appt : findResults.getItems()) {
+                //Loads outlookEvent
+                appt.load();
+                //make a new Outlook_Event object to hold data of one appointment
+
+
+
+                if (appt != null) {
+                    outlookEvent.addSubject(appt.getSubject().toString());
+                    outlookEvent.addAllDayEvent(appt.getIsAllDayEvent());
+                    if (!appt.getIsAllDayEvent()) {
+                        outlookEvent.addStart(appt.getStart().toString());
+                    }
+                    if (appt.getLocation() != null) {
+                        outlookEvent.addLocation(appt.getLocation().toString());
+                    }
+                    outlookEvent.addBody(appt.getBody().toString());
+                    outlookEvent.addEndDate(appt.getEnd().toString());
+                    outlookEvent.addAppointmentSequenceNumber(appt.getAppointmentSequenceNumber().toString());
+                    outlookEvent.addNetShowUrl(appt.getNetShowUrl().toString());
+
+
+                }
+
+                conf_event.setSummary(Convert_ToConfluence.subject_to_conf(outlookEvent));
+                conf_event.setAll_day(Convert_ToConfluence.all_day_to_conf(outlookEvent));
+                conf_event.setLocation(Convert_ToConfluence.location_to_conf(outlookEvent));
+                conf_event.setDescription(Convert_ToConfluence.body_to_conf(outlookEvent));
+                conf_event.setSequence(Convert_ToConfluence.sequence_to_conf(outlookEvent));
+
+
+                is.insert(conf_event, myConn);
+                eventsList.add(outlookEvent);
+
+
+
+
+
+                //load an outlookEvent to the linked list eventsList
+                /*
+                System.out.println("CONFLUENCE summary: "+ Convert_ToConfluence.subject_to_conf(outlookEvent));
+                System.out.println("location: " + Convert_ToConfluence.location_to_conf(outlookEvent));
+                System.out.println("all day: "+ Convert_ToConfluence.all_day_to_conf(outlookEvent));
+                System.out.println("OUTLOOK: "+ outlookEvent.toString());
+                System.out.println("just body ");
+                System.out.println(Jsoup.parse(appt.getBody().toString()));
+                Document doc = Jsoup.parse(appt.getBody().toString());
+                String text = doc.body().text();
+                System.out.println("text : "+ text);
+                */
+
+            }
+        }   catch(Exception exc){
+            exc.printStackTrace();
+        }
+
+
+
+
+       /* try {
             ep.setUser("tcomkproj2017");
             ep.setPassword("tcomkproj2017");
             ep.setdbUrl("localhost:3306/confluence");
             myConn = DriverManager.getConnection(ep.getDbUrl(), ep.getUser(), ep.getPassword());
             for (Appointment appt : findResults.getItems()) {
-                // Make a new Event object to hold data of one appointment
+                // Make a new Outlook_Event object to hold data of one appointment
                 // Loads appt
                 try {
                     appt.load();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                // Make a new Event object to hold data of one appointment
-                Event event = new Event();
+                // Make a new Outlook_Event object to hold data of one appointment
+                Outlook_Event event = new Outlook_Event();
                 try {
                     fromOutlook = appt.getSubject().toString();
 
@@ -135,7 +207,10 @@ public class ExCon implements Macro {
         catch(Exception exc){
             exc.printStackTrace();
         }
-        return fromOutlook;
+        */
+        return "This is the end of execute";
+
+
     }
 
 

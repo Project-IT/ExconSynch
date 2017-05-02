@@ -4,7 +4,9 @@ import java.sql.*;
 /**
  * ConfluenceCreated by jeppe on 2017-04-28.
  */
-public class eventParameters extends EventVerifier{
+
+//this is our Confluence Outlook_Event Object
+public class Confluence_Event extends EventVerifier{
     protected final String TABLENAME="confluence.ao_950dc3_tc_events";
 
     protected String insertQuery="INSERT INTO " + TABLENAME +
@@ -53,8 +55,9 @@ public class eventParameters extends EventVerifier{
     }
 
 
+///Here you call for convert_modifiers_toConf
     public void setAll_day(String s){
-        this.all_day=s;
+        this.all_day= s;
     }
     public void setCreated(String s){
         this.created=s;
@@ -108,6 +111,8 @@ public class eventParameters extends EventVerifier{
         this.vevent_uid=s;
     }
 
+
+//getting Confluence format data
     public String getInsertQuery(){
         return insertQuery;
     }

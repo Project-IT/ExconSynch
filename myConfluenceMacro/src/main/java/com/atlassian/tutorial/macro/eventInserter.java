@@ -5,7 +5,7 @@ import java.sql.*;
  */
 public class eventInserter {
     protected PreparedStatement ps=null;
-    public void insert(eventParameters dbEventObject, Connection myConn) {
+    public void insert(Confluence_Event dbEventObject, Connection myConn) {
         if (dbEventObject.verifyParameters()) {
             try {
                     Statement myStm = myConn.createStatement();
