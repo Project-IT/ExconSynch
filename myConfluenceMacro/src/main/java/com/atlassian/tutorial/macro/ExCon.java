@@ -145,11 +145,11 @@ public class ExCon implements Macro {
                 } catch (ParseException x) {
                     x.printStackTrace();
                 }
-                //ep.setUtc_end("1493244000000");  //UTC_END
-                //ep.setUtc_start("1493157600000");
-                SimpleDateFormat test = new SimpleDateFormat("yyyyMMdd'T'HHmmss'Z--'");
+                // Get current time 
+                SimpleDateFormat test = new SimpleDateFormat("yyyyMMdd'T'HHmmss'Z--'"); 
                 test.setTimeZone(TimeZone.getTimeZone("UTC"));
                 Date date = new Date();
+                //Create a random unique value for each event that is in the calendar of Outlook
                 double random = Math.random() * 1000000000;
                 ep.setVevent_uid(test.format(date) + String.valueOf(random)  + "@130.229.188.219");//VEVENT UID
                 ei.insert(ep, myConn);
@@ -170,13 +170,17 @@ public class ExCon implements Macro {
         }
 
     }
-
-    private static String ConvertTime(Date time, boolean bool) throws Exception {
+    
+    /* Converts the time acquired from the specific Outlook event to the compatible Unix Epoch time format.
+       time -> time & date of the event
+       localtime -> Determines whether or not the time is to be local or UTC
+    */
+    private static String ConvertTime(Date time, boolean localtime) throws Exception {
 
         Date date = null;
         SimpleDateFormat df = new SimpleDateFormat("EEE MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
 
-        if (bool) {
+        if (localtime) {
             try {
                 date = df.parse(time.toString());
             } catch (ParseException exc) {
