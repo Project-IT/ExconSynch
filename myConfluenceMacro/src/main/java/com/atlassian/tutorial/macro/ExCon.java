@@ -147,7 +147,8 @@ public class ExCon implements Macro {
                 }
                 //ep.setUtc_end("1493244000000");  //UTC_END
                 //ep.setUtc_start("1493157600000");
-                ep.setVevent_uid("20170426T193232Z--2091550207@130.229.188.219");//VEVENT UID
+                double random = Math.random() * 1000000000;
+                ep.setVevent_uid("20170426T193232Z--" + String.valueOf(random)  + "@130.229.188.219");//VEVENT UID
                 ei.insert(ep, myConn);
             }
             myConn.close();
