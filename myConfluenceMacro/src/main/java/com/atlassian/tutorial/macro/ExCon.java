@@ -29,6 +29,7 @@ public class ExCon implements Macro {
 
     public String execute(Map<String, String> map, String s, ConversionContext conversionContext) throws MacroExecutionException {
 
+        String fromOutlook;
         String username = map.get("Username");
         String password = map.get("Password");
 
@@ -86,7 +87,7 @@ public class ExCon implements Macro {
 
         LinkedList<Event> eventsList = new LinkedList<Event>();
         eventParameters ep=new eventParameters();
-        Connection myConn=null;
+        Connection myConn;
         eventInserter ei=new eventInserter();
         try {
             ep.setUser("tcomkproj2017");
@@ -101,9 +102,10 @@ public class ExCon implements Macro {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                // Make a new Event object to hold data of one appointment
-                Event event = new Event();
+               /*  Make a new Event object to hold data of one appointment
+                Event event = new Event();*/
                 try {
+
                     fromOutlook = appt.getSubject().toString();
 
                     System.out.println(fromOutlook);
