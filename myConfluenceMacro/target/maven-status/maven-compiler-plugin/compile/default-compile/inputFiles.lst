@@ -1,4 +1,8 @@
-D:\project\inProgress\SqlWorks\ExCon\myConfluenceMacro\src\main\java\com\atlassian\tutorial\api\MyPluginComponent.java
-D:\project\inProgress\SqlWorks\ExCon\myConfluenceMacro\src\main\java\com\atlassian\tutorial\impl\MyPluginComponentImpl.java
-D:\project\inProgress\SqlWorks\ExCon\myConfluenceMacro\src\main\java\com\atlassian\tutorial\macro\Event.java
-D:\project\inProgress\SqlWorks\ExCon\myConfluenceMacro\src\main\java\com\atlassian\tutorial\macro\ExCon.java
+/home/koszio/branch2_kostas/ExconSynch/myConfluenceMacro/src/main/java/com/atlassian/tutorial/api/MyPluginComponent.java
+/home/koszio/branch2_kostas/ExconSynch/myConfluenceMacro/src/main/java/com/atlassian/tutorial/macro/EventVerifier.java
+/home/koszio/branch2_kostas/ExconSynch/myConfluenceMacro/src/main/java/com/atlassian/tutorial/macro/Event.java
+/home/koszio/branch2_kostas/ExconSynch/myConfluenceMacro/src/main/java/com/atlassian/tutorial/macro/dbParameters.java
+/home/koszio/branch2_kostas/ExconSynch/myConfluenceMacro/src/main/java/com/atlassian/tutorial/impl/MyPluginComponentImpl.java
+/home/koszio/branch2_kostas/ExconSynch/myConfluenceMacro/src/main/java/com/atlassian/tutorial/macro/ExCon.java
+/home/koszio/branch2_kostas/ExconSynch/myConfluenceMacro/src/main/java/com/atlassian/tutorial/macro/eventParameters.java
+/home/koszio/branch2_kostas/ExconSynch/myConfluenceMacro/src/main/java/com/atlassian/tutorial/macro/eventInserter.java

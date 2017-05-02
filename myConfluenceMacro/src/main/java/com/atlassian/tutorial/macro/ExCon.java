@@ -31,7 +31,7 @@ public class ExCon implements Macro {
 
         String username = map.get("Username");
         String password = map.get("Password");
-        String  fromOutlook="Before";
+        String fromOutlook=null;
 
         // Specifies Exchange version, (any newer works as well)
         ExchangeService service = new ExchangeService(ExchangeVersion.Exchange2010_SP2);
@@ -89,6 +89,7 @@ public class ExCon implements Macro {
         Connection myConn=null;
         eventInserter ei=new eventInserter();
         try {
+
             ep.setUser("tcomkproj2017");
             ep.setPassword("tcomkproj2017");
             ep.setdbUrl("localhost:3306/confluence");

@@ -4,7 +4,7 @@ import java.sql.*;
 /**
  * ConfluenceCreated by jeppe on 2017-04-28.
  */
-public class eventParameters extends EventVerifier{
+public class eventParameters extends dbParameters{
     protected final String TABLENAME="confluence.ao_950dc3_tc_events";
 
     protected String insertQuery="INSERT INTO " + TABLENAME +
@@ -31,24 +31,26 @@ public class eventParameters extends EventVerifier{
 
     //defensive method to check the input. What do we need here?
     public boolean verifyParameters(){
-        if(!verifyDbParameters())        return false;
-        if(!verifyAll_day())             return false;
-        if(!verifyCreated())             return false;
-        if(!verifyDescription())         return false;
-        if(!verifyEnd())                 return false;
-        if(!verifyLast_modified())       return false;
-        if(!verifyLocation())            return false;
-        if(!verifyOrganiser())           return false;
-        //if(recurrence_id_timestamp==1337)return false;
-        if(!verifyRecurrence_rule())     return false;
-        if(!verifyReminding_setting_id())return false;
-        if(!verifySequence())            return false;
-        if(!verifySub_calendar_id())     return false;
-        if(!verifySummary())             return false;
-        if(!verifyUrl())                 return false;
-        if(!verifyUtc_end())             return false;
-        if(!verifyUtc_start())           return false;
-        if(!verifyVevent_uid())          return false;
+        EventVerifier ev=new EventVerifier();
+        if(!ev.verifyAll_day(getAll_day()))        return false;
+
+        if(!ev.verifyCreated(getCreated()))             return false;
+        if(!ev.verifyDescription(getDescription()))         return false;
+        if(!ev.verifyEnd(getEnd()))              return false;
+        if(!ev.verifyLast_modified(getLast_modified()))       return false;
+        if(!ev.verifyLocation(getLocation()))            return false;
+        if(!ev.verifyOrganiser(getOrganiser()))           return false;
+        //if(ev.verifyRecurrence_id_timestamp==1337)return false;
+        if(!ev.verifyRecurrence_rule(getRecurrence_rule()))     return false;
+        if(!ev.verifyReminding_setting_id(getReminder_setting_id()))return false;
+        if(!ev.verifySequence(getSequence()))            return false;
+        if(!ev.verifyStart(getStart()))              return false;
+        if(!ev.verifySub_calendar_id(getSub_calendar_id()))     return false;
+        if(!ev.verifySummary(getSummary()))             return false;
+        if(!ev.verifyUrl(getUrl()))                 return false;
+        if(!ev.verifyUtc_end(getUtc_end()))             return false;
+        if(!ev.verifyUtc_start(getUtc_start()))           return false;
+        if(!ev.verifyVevent_uid(getVevent_uid()))          return false;
         return true;
     }
 
