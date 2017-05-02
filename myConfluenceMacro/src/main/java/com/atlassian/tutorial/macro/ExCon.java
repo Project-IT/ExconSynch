@@ -31,7 +31,7 @@ public class ExCon implements Macro {
 
         String username = map.get("Username");
         String password = map.get("Password");
-
+        String  fromOutlook="Before";
 
         // Specifies Exchange version, (any newer works as well)
         ExchangeService service = new ExchangeService(ExchangeVersion.Exchange2010_SP2);
