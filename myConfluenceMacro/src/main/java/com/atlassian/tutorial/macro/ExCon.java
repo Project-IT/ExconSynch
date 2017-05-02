@@ -22,6 +22,7 @@ import java.util.LinkedList;
 import java.util.Map;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.sql.*;
 
 
 public class ExCon implements Macro {
@@ -30,6 +31,7 @@ public class ExCon implements Macro {
 
         String username = map.get("Username");
         String password = map.get("Password");
+
 
         // Specifies Exchange version, (any newer works as well)
         ExchangeService service = new ExchangeService(ExchangeVersion.Exchange2010_SP2);
@@ -81,82 +83,71 @@ public class ExCon implements Macro {
         }
 
         findResults.getItems();
-        LinkedList<String> eventsList = new LinkedList<String>();
 
-        for (Appointment appt : findResults.getItems()) {
-            // Make a new Event object to hold data of one appointment
-            Event event = new Event();
-
-            // Loads appt
-            try {
-                appt.load();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-            // Add subject of the event
-            try {
-                event.addSubject(appt.getSubject());
-            } catch (ServiceLocalException e) {
-                e.printStackTrace();
-            }
-
-            // Add an "all day" event
-            try {
-                event.addAllDayEvent(appt.getIsAllDayEvent().toString());
-            } catch (ServiceLocalException e) {
-                e.printStackTrace();
-            }
-
-            // Add a "not all day" event
-            try {
-                if (!appt.getIsAllDayEvent()) {
-                    event.addStart(appt.getStart().toString());
-                    event.addEnd(appt.getEnd().toString());
+        LinkedList<Event> eventsList = new LinkedList<Event>();
+        eventParameters ep=new eventParameters();
+        Connection myConn=null;
+        eventInserter ei=new eventInserter();
+        try {
+            ep.setUser("tcomkproj2017");
+            ep.setPassword("tcomkproj2017");
+            ep.setdbUrl("localhost:3306/confluence");
+            myConn = DriverManager.getConnection(ep.getDbUrl(), ep.getUser(), ep.getPassword());
+            for (Appointment appt : findResults.getItems()) {
+                // Make a new Event object to hold data of one appointment
+                // Loads appt
+                try {
+                    appt.load();
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
-            } catch (ServiceLocalException e) {
-                e.printStackTrace();
-            }
+                // Make a new Event object to hold data of one appointment
+                Event event = new Event();
+                try {
+                    fromOutlook = appt.getSubject().toString();
 
-            // Add location of the event (if it exists)
-            try {
-                if (appt.getLocation() != null) {
-                    event.addLocation(appt.getLocation());
+                    System.out.println(fromOutlook);
+                } catch (ServiceLocalException e) {
+                    e.printStackTrace();
                 }
-            } catch (ServiceLocalException e) {
-                e.printStackTrace();
+                ep.setAll_day("1");                //all day 1
+                ep.setCreated("1493235152154");   //created
+                ep.setDescription("");                //description
+                ep.setEnd("1493251200000");   //End
+                ep.setLast_modified("1493251200000");   //Last_Modified
+                ep.setLocation("");      //Location
+                ep.setOrganiser("4028b8815babae10015babb056780000");//Organiser
+                ep.setRecurrence_id_timestamp(0);            //rec. Id Timestamp
+                ep.setRecurrence_rule("");            //Rec. Rule
+                ep.setReminder_setting_id("");           //Reminder_SETTING_ID
+                ep.setSequence("0");              //SEQUENCE
+                ep.setStart("1493164800000");  //START
+                ep.setSub_calendar_id("dfa1eb25-ef12-42c8-abcf-71dec96b58ac");//SUB_CALENDAR_ID
+                ep.setSummary(fromOutlook);                //SUMMARY
+                ep.setUrl("NULL");           //URL
+                ep.setUtc_end("1493244000000");  //UTC_END
+                ep.setUtc_start("1493157600000");  //UTC_START
+                ep.setVevent_uid("20170426T193232Z--2091550207@localhost");//VEVENT UID
+                ei.insert(ep, myConn);
             }
-
-            // Add the body of the event
-            try {
-                String poopoo = appt.getBody().toString();
-                event.addBody(poopoo);
-            } catch (ServiceLocalException e) {
-                e.printStackTrace();
-            }
-
-            // Load an event to the linked list eventsList
-            eventsList.add(event.stringer());
-
+            myConn.close();
         }
-
-        String result = "";
-
-        for (String events : eventsList) {
-            result += events;
+        catch(Exception exc){
+            exc.printStackTrace();
         }
-
-        return result;
+        return fromOutlook;
     }
 
-    // Simple error checker for the URI
-    static class RedirectionUrlCallback implements IAutodiscoverRedirectionUrl {
-        public boolean autodiscoverRedirectionUrlValidationCallback(
-                String redirectionUrl) {
-            return redirectionUrl.toLowerCase().startsWith("https://");
-        }
 
+// Simple error checker for the URI
+static class RedirectionUrlCallback implements IAutodiscoverRedirectionUrl {
+    public boolean autodiscoverRedirectionUrlValidationCallback(
+            String redirectionUrl) {
+        return redirectionUrl.toLowerCase().startsWith("https://");
     }
+
+}
+
 
     public BodyType getBodyType() {
         return BodyType.NONE;
