@@ -1,2 +1,3 @@
-*
+myConfluenceMacro/*
+!myConfluenceMacro/src/main/java/com/atlassian/tutorial/macro/
 !myConfluenceMacro/src/main/java/com/atlassian/tutorial/macro/*
