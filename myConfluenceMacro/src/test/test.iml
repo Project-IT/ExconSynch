@@ -23,5 +23,7 @@
     <orderEntry type="library" name="lib12" level="project" />
     <orderEntry type="module" module-name="main" />
     <orderEntry type="module" module-name="main" />
+    <orderEntry type="library" name="Maven: com.atlassian.sal:sal-api:2.0.17" level="project" />
+    <orderEntry type="library" name="Maven: junit:junit:4.10" level="project" />
   </component>
 </module>
