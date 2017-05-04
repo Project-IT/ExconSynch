@@ -1,2 +1,3 @@
-/myConfluenceMacro/.idea/
-/myConfluenceMacro/target/
+*
+!*/
+!/src
