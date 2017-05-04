@@ -15,5 +15,3 @@ myConfluenceMacro/target/surefire-reports/TEST-ut.com.atlassian.tutorial.MyCompo
 myConfluenceMacro/target/surefire-reports/ut.com.atlassian.tutorial.MyComponentUnitTest.txt
 myConfluenceMacro/target/test-classes/META-INF/MANIFEST.MF
 
-*
-!/myConfluenceMacro/src
