@@ -32,6 +32,7 @@ public class eventParameters extends dbParameters{
     //defensive method to check the input. What do we need here?
     public boolean verifyParameters(){
         EventVerifier ev=new EventVerifier();
+        if(!verifyDbParameters())               return false;
         if(!ev.verifyAll_day(getAll_day()))        return false;
         if(!ev.verifyCreated(getCreated()))             return false;
         if(!ev.verifyDescription(getDescription()))         return false;
@@ -49,7 +50,7 @@ public class eventParameters extends dbParameters{
         if(!ev.verifyUrl(getUrl()))                 return false;
         if(!ev.verifyUtc_end(getUtc_end()))             return false;
         if(!ev.verifyUtc_start(getUtc_start()))           return false;
-        if(!ev.verifyVevent_uid(getVevent_uid()))          return false;
+        if(!ev.verifyVevent_uid(getVevent_uid()))          return true;
         return true;
     }
 
