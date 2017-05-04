@@ -28,9 +28,10 @@ public class ExCon implements Macro {
 
     public String execute(Map<String, String> map, String s, ConversionContext conversionContext) throws MacroExecutionException {
 
+        String fromOutlook = "";
         String username = map.get("Username");
         String password = map.get("Password");
-        String fromOutlook = null;
+
 
         // Specifies Exchange version, (any newer works as well)
         ExchangeService service = new ExchangeService(ExchangeVersion.Exchange2010_SP2);
@@ -85,10 +86,9 @@ public class ExCon implements Macro {
 
         LinkedList<Event> eventsList = new LinkedList<Event>();
         eventParameters ep = new eventParameters();
-        Connection myConn = null;
+        Connection myConn;
         eventInserter ei = new eventInserter();
         try {
-
             ep.setUser("tcomkproj2017");
             ep.setPassword("tcomkproj2017");
             ep.setdbUrl("localhost:3306/confluence");
@@ -101,25 +101,33 @@ public class ExCon implements Macro {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                // Make a new Event object to hold data of one appointment
-
+               /*  Make a new Event object to hold data of one appointment
+                Event event = new Event();*/
                 try {
 
-                    fromOutlook = appt.getSubject();
+                    fromOutlook = appt.getSubject().toString();
 
                     System.out.println(fromOutlook);
                 } catch (ServiceLocalException e) {
                     e.printStackTrace();
                 }
                 ep.setAll_day("0");                //all day 1
-                ep.setCreated("1493235152154");   //created
-                ep.setDescription("");                //description
+                try {
+                    ep.setCreated(ConvertTime(appt.getDateTimeCreated(), true));   //created
+                } catch(ParseException x){
+                    x.printStackTrace();
+                }
+                    ep.setDescription("");                //description
                 try {
                     ep.setEnd(ConvertTime(appt.getEnd(), true));   //End
                 } catch (ParseException x) {
                     x.printStackTrace();
                 }
-                ep.setLast_modified("1493251200000");   //Last_Modified
+                try {
+                    ep.setLast_modified(ConvertTime(appt.getLastModifiedTime(), true));   //Last_Modified
+                } catch (ParseException x){
+                    x.printStackTrace();
+                }
                 ep.setLocation("");      //Location
                 ep.setOrganiser("4028b8815babae10015babb056780000");//Organiser
                 ep.setRecurrence_id_timestamp(0);            //rec. Id Timestamp
@@ -145,10 +153,13 @@ public class ExCon implements Macro {
                 } catch (ParseException x) {
                     x.printStackTrace();
                 }
-                //ep.setUtc_end("1493244000000");  //UTC_END
-                //ep.setUtc_start("1493157600000");
+                // Get current time 
+                SimpleDateFormat test = new SimpleDateFormat("yyyyMMdd'T'HHmmss'Z--'"); 
+                test.setTimeZone(TimeZone.getTimeZone("UTC"));
+                Date date = new Date();
+                //Create a random unique value for each event that is in the calendar of Outlook
                 double random = Math.random() * 1000000000;
-                ep.setVevent_uid("20170426T193232Z--" + String.valueOf(random) + "@130.229.188.219");//VEVENT UID
+                ep.setVevent_uid(test.format(date) + String.valueOf(random)  + "@130.229.188.219");//VEVENT UID
                 ei.insert(ep, myConn);
             }
             myConn.close();
@@ -167,13 +178,17 @@ public class ExCon implements Macro {
         }
 
     }
-
-    private static String ConvertTime(Date time, boolean bool) throws Exception {
+    
+    /* Converts the time acquired from the specific Outlook event to the compatible Unix Epoch time format.
+       time -> time & date of the event
+       localtime -> Determines whether or not the time is to be local or UTC
+    */
+    private static String ConvertTime(Date time, boolean localtime) throws Exception {
 
         Date date = null;
         SimpleDateFormat df = new SimpleDateFormat("EEE MMM dd HH:mm:ss z yyyy", Locale.ENGLISH);
 
-        if (bool) {
+        if (localtime) {
             try {
                 date = df.parse(time.toString());
             } catch (ParseException exc) {

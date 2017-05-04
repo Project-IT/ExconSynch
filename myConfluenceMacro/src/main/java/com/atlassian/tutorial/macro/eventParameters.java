@@ -33,7 +33,6 @@ public class eventParameters extends dbParameters{
     public boolean verifyParameters(){
         EventVerifier ev=new EventVerifier();
         if(!ev.verifyAll_day(getAll_day()))        return false;
-
         if(!ev.verifyCreated(getCreated()))             return false;
         if(!ev.verifyDescription(getDescription()))         return false;
         if(!ev.verifyEnd(getEnd()))              return false;
@@ -131,9 +130,7 @@ public class eventParameters extends dbParameters{
     public String getLocation(){
         return location;
     }
-    public String getOrganiser(){
-        return organiser;
-    }
+    public String getOrganiser(){ return organiser; }
     public int getRecurrence_id_timestamp(){
         return recurrence_id_timestamp;
     }
