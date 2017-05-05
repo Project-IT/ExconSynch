@@ -84,7 +84,8 @@ public class ExCon implements Macro {
 
         findResults.getItems();
 
-        LinkedList<Event> eventsList = new LinkedList<Event>();
+        //LinkedList<Event> eventsList = new LinkedList<Event>();
+
         eventParameters ep = new eventParameters();
         Connection myConn;
         eventInserter ei = new eventInserter();
@@ -93,6 +94,13 @@ public class ExCon implements Macro {
             ep.setPassword("tcomkproj2017");
             ep.setdbUrl("localhost:3306/confluence");
             myConn = DriverManager.getConnection(ep.getDbUrl(), ep.getUser(), ep.getPassword());
+            //Connection myTestConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/datatest", ep.getUser(), ep.getPassword());
+            EventMapper em = new EventMapper();
+            em.tableMaker(myConn);
+            EventUpdater eu = new EventUpdater();
+            boolean knownEntry;
+
+
             for (Appointment appt : findResults.getItems()) {
                 // Make a new Event object to hold data of one appointment
                 // Loads appt
@@ -101,23 +109,16 @@ public class ExCon implements Macro {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-               /*  Make a new Event object to hold data of one appointment
-                Event event = new Event();*/
-                try {
 
-                    fromOutlook = appt.getSubject().toString();
+                fromOutlook = appt.getSubject();
 
-                    System.out.println(fromOutlook);
-                } catch (ServiceLocalException e) {
-                    e.printStackTrace();
-                }
                 ep.setAll_day("0");                //all day 1
                 try {
                     ep.setCreated(ConvertTime(appt.getDateTimeCreated(), true));   //created
-                } catch(ParseException x){
+                } catch (ParseException x) {
                     x.printStackTrace();
                 }
-                    ep.setDescription("");                //description
+                ep.setDescription("");                //description
                 try {
                     ep.setEnd(ConvertTime(appt.getEnd(), true));   //End
                 } catch (ParseException x) {
@@ -125,7 +126,7 @@ public class ExCon implements Macro {
                 }
                 try {
                     ep.setLast_modified(ConvertTime(appt.getLastModifiedTime(), true));   //Last_Modified
-                } catch (ParseException x){
+                } catch (ParseException x) {
                     x.printStackTrace();
                 }
                 ep.setLocation("");      //Location
@@ -153,14 +154,16 @@ public class ExCon implements Macro {
                 } catch (ParseException x) {
                     x.printStackTrace();
                 }
-                // Get current time 
-                SimpleDateFormat test = new SimpleDateFormat("yyyyMMdd'T'HHmmss'Z--'"); 
+                // Get current time
+                SimpleDateFormat test = new SimpleDateFormat("yyyyMMdd'T'HHmmss'Z--'");
                 test.setTimeZone(TimeZone.getTimeZone("UTC"));
                 Date date = new Date();
                 //Create a random unique value for each event that is in the calendar of Outlook
-                double random = Math.random() * 1000000000;
-                ep.setVevent_uid(test.format(date) + String.valueOf(random)  + "@130.229.188.219");//VEVENT UID
-                ei.insert(ep, myConn);
+                ep.setVevent_uid(appt.getICalUid());
+
+                em.tableMap(ep.getVevent_uid(), myConn, eu, ep);
+                System.out.println(ep.getSummary());
+
             }
             myConn.close();
         } catch (Exception exc) {
@@ -178,7 +181,7 @@ public class ExCon implements Macro {
         }
 
     }
-    
+
     /* Converts the time acquired from the specific Outlook event to the compatible Unix Epoch time format.
        time -> time & date of the event
        localtime -> Determines whether or not the time is to be local or UTC
