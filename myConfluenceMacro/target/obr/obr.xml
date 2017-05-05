@@ -1,7 +1,7 @@
-<repository lastmodified='20170505114111.063'>
+<repository lastmodified='20170505034939.673'>
   <resource id='com.atlassian.tutorial.myConfluenceMacro/1.0.0.SNAPSHOT' symbolicname='com.atlassian.tutorial.myConfluenceMacro' presentationname='myConfluenceMacro' uri='myConfluenceMacro-1.0.0-SNAPSHOT.jar' version='1.0.0.SNAPSHOT'>
     <description>This is the com.atlassian.tutorial:myConfluenceMacro plugin for Atlassian Confluence.</description>
-    <size>4562806</size>
+    <size>5598604</size>
     <documentation>http://developer.atlassian.com/</documentation>
     <capability name='bundle'>
       <p n='symbolicname' v='com.atlassian.tutorial.myConfluenceMacro'/>
@@ -27,20 +27,33 @@
     <require name='package' filter='(&amp;(package=com.atlassian.tutorial.api)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))' extend='false' multiple='false' optional='true'>Import package com.atlassian.tutorial.api;resolution:=optional;version="[1.0,2)"</require>
     <require name='package' filter='(&amp;(package=com.google.common.base))' extend='false' multiple='false' optional='true'>Import package com.google.common.base;resolution:=optional</require>
     <require name='package' filter='(&amp;(package=com.google.common.collect))' extend='false' multiple='false' optional='true'>Import package com.google.common.collect;resolution:=optional</require>
+    <require name='package' filter='(&amp;(package=com.ibm.uvm.tools))' extend='false' multiple='false' optional='true'>Import package com.ibm.uvm.tools;resolution:=optional</require>
     <require name='package' filter='(&amp;(package=com.mchange.v2.c3p0))' extend='false' multiple='false' optional='true'>Import package com.mchange.v2.c3p0;resolution:=optional</require>
+    <require name='package' filter='(&amp;(package=com.sun.jdmk.comm))' extend='false' multiple='false' optional='true'>Import package com.sun.jdmk.comm;resolution:=optional</require>
     <require name='package' filter='(&amp;(package=javax.annotation))' extend='false' multiple='false' optional='true'>Import package javax.annotation;resolution:=optional</require>
     <require name='package' filter='(&amp;(package=javax.crypto))' extend='false' multiple='false' optional='true'>Import package javax.crypto;resolution:=optional</require>
     <require name='package' filter='(&amp;(package=javax.crypto.spec))' extend='false' multiple='false' optional='true'>Import package javax.crypto.spec;resolution:=optional</require>
     <require name='package' filter='(&amp;(package=javax.inject))' extend='false' multiple='false' optional='true'>Import package javax.inject;resolution:=optional</require>
+    <require name='package' filter='(&amp;(package=javax.jmdns))' extend='false' multiple='false' optional='true'>Import package javax.jmdns;resolution:=optional</require>
+    <require name='package' filter='(&amp;(package=javax.jms))' extend='false' multiple='false' optional='true'>Import package javax.jms;resolution:=optional</require>
+    <require name='package' filter='(&amp;(package=javax.management))' extend='false' multiple='false' optional='true'>Import package javax.management;resolution:=optional</require>
     <require name='package' filter='(&amp;(package=javax.naming))' extend='false' multiple='false' optional='true'>Import package javax.naming;resolution:=optional</require>
     <require name='package' filter='(&amp;(package=javax.naming.directory))' extend='false' multiple='false' optional='true'>Import package javax.naming.directory;resolution:=optional</require>
     <require name='package' filter='(&amp;(package=javax.naming.ldap))' extend='false' multiple='false' optional='true'>Import package javax.naming.ldap;resolution:=optional</require>
     <require name='package' filter='(&amp;(package=javax.naming.spi))' extend='false' multiple='false' optional='true'>Import package javax.naming.spi;resolution:=optional</require>
     <require name='package' filter='(&amp;(package=javax.net))' extend='false' multiple='false' optional='true'>Import package javax.net;resolution:=optional</require>
     <require name='package' filter='(&amp;(package=javax.net.ssl))' extend='false' multiple='false' optional='true'>Import package javax.net.ssl;resolution:=optional</require>
+    <require name='package' filter='(&amp;(package=javax.security.auth.callback))' extend='false' multiple='false' optional='true'>Import package javax.security.auth.callback;resolution:=optional</require>
     <require name='package' filter='(&amp;(package=javax.security.auth.x500))' extend='false' multiple='false' optional='true'>Import package javax.security.auth.x500;resolution:=optional</require>
+    <require name='package' filter='(&amp;(package=javax.security.sasl))' extend='false' multiple='false' optional='true'>Import package javax.security.sasl;resolution:=optional</require>
     <require name='package' filter='(&amp;(package=javax.servlet))' extend='false' multiple='false' optional='true'>Import package javax.servlet;resolution:=optional</require>
     <require name='package' filter='(&amp;(package=javax.sql))' extend='false' multiple='false' optional='true'>Import package javax.sql;resolution:=optional</require>
+    <require name='package' filter='(&amp;(package=javax.swing))' extend='false' multiple='false' optional='true'>Import package javax.swing;resolution:=optional</require>
+    <require name='package' filter='(&amp;(package=javax.swing.border))' extend='false' multiple='false' optional='true'>Import package javax.swing.border;resolution:=optional</require>
+    <require name='package' filter='(&amp;(package=javax.swing.event))' extend='false' multiple='false' optional='true'>Import package javax.swing.event;resolution:=optional</require>
+    <require name='package' filter='(&amp;(package=javax.swing.table))' extend='false' multiple='false' optional='true'>Import package javax.swing.table;resolution:=optional</require>
+    <require name='package' filter='(&amp;(package=javax.swing.text))' extend='false' multiple='false' optional='true'>Import package javax.swing.text;resolution:=optional</require>
+    <require name='package' filter='(&amp;(package=javax.swing.tree))' extend='false' multiple='false' optional='true'>Import package javax.swing.tree;resolution:=optional</require>
     <require name='package' filter='(&amp;(package=javax.transaction.xa))' extend='false' multiple='false' optional='true'>Import package javax.transaction.xa;resolution:=optional</require>
     <require name='package' filter='(&amp;(package=javax.xml.bind))' extend='false' multiple='false' optional='true'>Import package javax.xml.bind;resolution:=optional</require>
     <require name='package' filter='(&amp;(package=javax.xml.namespace))' extend='false' multiple='false' optional='true'>Import package javax.xml.namespace;resolution:=optional</require>
@@ -57,7 +70,6 @@
     <require name='package' filter='(&amp;(package=org.apache.avalon.framework.logger))' extend='false' multiple='false' optional='true'>Import package org.apache.avalon.framework.logger;resolution:=optional</require>
     <require name='package' filter='(&amp;(package=org.apache.commons.lang))' extend='false' multiple='false' optional='true'>Import package org.apache.commons.lang;resolution:=optional</require>
     <require name='package' filter='(&amp;(package=org.apache.log))' extend='false' multiple='false' optional='true'>Import package org.apache.log;resolution:=optional</require>
-    <require name='package' filter='(&amp;(package=org.apache.log4j))' extend='false' multiple='false' optional='true'>Import package org.apache.log4j;resolution:=optional</require>
     <require name='package' filter='(&amp;(package=org.ietf.jgss))' extend='false' multiple='false' optional='true'>Import package org.ietf.jgss;resolution:=optional</require>
     <require name='package' filter='(&amp;(package=org.jboss.resource.adapter.jdbc))' extend='false' multiple='false' optional='true'>Import package org.jboss.resource.adapter.jdbc;resolution:=optional</require>
     <require name='package' filter='(&amp;(package=org.jboss.resource.adapter.jdbc.vendor))' extend='false' multiple='false' optional='true'>Import package org.jboss.resource.adapter.jdbc.vendor;resolution:=optional</require>
@@ -78,5 +90,6 @@
     <require name='package' filter='(&amp;(package=org.w3c.dom))' extend='false' multiple='false' optional='true'>Import package org.w3c.dom;resolution:=optional</require>
     <require name='package' filter='(&amp;(package=org.xml.sax))' extend='false' multiple='false' optional='true'>Import package org.xml.sax;resolution:=optional</require>
     <require name='package' filter='(&amp;(package=org.xml.sax.helpers))' extend='false' multiple='false' optional='true'>Import package org.xml.sax.helpers;resolution:=optional</require>
+    <require name='package' filter='(&amp;(package=sun.security.util))' extend='false' multiple='false' optional='true'>Import package sun.security.util;resolution:=optional</require>
   </resource>
 </repository>
