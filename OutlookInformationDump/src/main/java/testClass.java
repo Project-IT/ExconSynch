@@ -78,6 +78,18 @@ public class testClass {
                 }
                 //add body
                 event.addBody(appt.getBody().toString());
+                System.out.println("subject:  " +appt.getSubject().toString());
+                System.out.println("appointment state:   " +appt.getAppointmentState().toString());
+               // System.out.println("conference type:   " +appt.getConferenceType().toString());
+                System.out.println("categories:   " +appt.getCategories().toString());
+                System.out.println("culture: " +appt.getCulture());
+                System.out.println("item id:   " +appt.getId().toString());
+                System.out.println("item class:   " +appt.getItemClass().toString());
+                System.out.println("set field xml element name:   " +appt.getSetFieldXmlElementName().toString());
+                System.out.println();
+                System.out.println();
+
+
 
             }
             //load an event to the linked list eventsList
