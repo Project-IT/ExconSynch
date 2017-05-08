@@ -1,4 +1,3 @@
-*
-!myConfluenceMacro/pom.xml
-!myConfluenceMacro/myConfluenceMacro.iml
-
+/myConfluenceMacro/.idea
+/myConfluencMacro/target
+/myConfluenceMacro/out
