@@ -10,10 +10,10 @@ public class eventParameters extends dbParameters{
     protected String updateQuery="UPDATE " + TABLENAME +
             " SET ALL_DAY=?, CREATED = ?, DESCRIPTION = ?, END = ?, LAST_MODIFIED = ?, LOCATION = ?, ORGANISER = ?, RECURRENCE_ID_TIMESTAMP = ?, RECURRENCE_RULE = ?, REMINDER_SETTING_ID = ?, SEQUENCE = ?, START = ?, SUB_CALENDAR_ID = ?, SUMMARY = ?, URL = ?, UTC_END = ?, UTC_START = ? WHERE VEVENT_UID = ?";
 
-
     protected String insertQuery="INSERT INTO " + TABLENAME +
             " (ALL_DAY, CREATED, DESCRIPTION, END, LAST_MODIFIED, LOCATION, ORGANISER, RECURRENCE_ID_TIMESTAMP, RECURRENCE_RULE, REMINDER_SETTING_ID, SEQUENCE, START, SUB_CALENDAR_ID, SUMMARY, URL, UTC_END, UTC_START, VEVENT_UID)" +
             " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
     protected String all_day=                null;
     protected String created=                null;
     protected String description=            null;

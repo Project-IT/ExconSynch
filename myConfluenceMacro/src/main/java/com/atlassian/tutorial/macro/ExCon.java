@@ -98,8 +98,8 @@ public class ExCon implements Macro {
             EventMapper em = new EventMapper();
             em.tableMaker(myConn);
             EventUpdater eu = new EventUpdater();
-            boolean knownEntry;
-
+            EventDeleter ed = new EventDeleter();
+            int i = 0;
 
             for (Appointment appt : findResults.getItems()) {
                 // Make a new Event object to hold data of one appointment
@@ -109,7 +109,7 @@ public class ExCon implements Macro {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-
+                ed.outlookIDs [i] = appt.getICalUid();
                 fromOutlook = appt.getSubject();
 
                 ep.setAll_day("0");                //all day 1
@@ -163,7 +163,7 @@ public class ExCon implements Macro {
 
                 em.tableMap(ep.getVevent_uid(), myConn, eu, ep);
                 System.out.println(ep.getSummary());
-
+                i++;
             }
             myConn.close();
         } catch (Exception exc) {
