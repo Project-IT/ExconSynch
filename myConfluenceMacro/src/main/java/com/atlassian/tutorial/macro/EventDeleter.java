@@ -3,6 +3,7 @@ package com.atlassian.tutorial.macro;
 import java.sql.*;
 import java.util.ArrayList;
 
+
 /**
  * Created by alexander on 2017-05-08.
  */
