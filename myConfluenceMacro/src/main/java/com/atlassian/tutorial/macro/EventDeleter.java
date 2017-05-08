@@ -21,6 +21,7 @@ public class EventDeleter {
             tableIDs.add(rs.getString(1));
         }
 
+        //Compare IDs from Outlook to the Database table - remove if matching
         for (Object outlookID : outlookIDs) {
             for (int k = 0; k < tableIDs.size(); k++) {
                 if (outlookID.equals(tableIDs.get(k))) {

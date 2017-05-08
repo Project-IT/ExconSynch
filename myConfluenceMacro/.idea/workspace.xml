@@ -26,7 +26,7 @@
       <file leaf-file-name="ExCon.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/atlassian/tutorial/macro/ExCon.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-836">
+            <state relative-caret-position="-782">
               <caret line="103" column="61" selection-start-line="103" selection-start-column="61" selection-end-line="103" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -35,32 +35,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EventDeleter.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EventDeleter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/atlassian/tutorial/macro/EventDeleter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+            <state relative-caret-position="302">
+              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1494253617245" expanded="true" signature="329:378" ph="SELECT * Out... outlookuidtable" />
-                <marker date="1494253617245" expanded="true" signature="1052:1134" ph="SELECT Confl... outlookuidtable" />
-                <marker date="1494253617245" expanded="true" signature="1268:1329" ph="DELETE FROM " />
-                <marker date="1494253617245" expanded="true" signature="1268:1368" ph="DELETE FROM " />
-                <marker date="1494253617245" expanded="true" signature="1461:1529" ph="DELETE FROM " />
+                <marker date="1494254114649" expanded="true" signature="329:378" ph="SELECT * Out... outlookuidtable" />
+                <marker date="1494254114649" expanded="true" signature="1130:1212" ph="SELECT Confl... outlookuidtable" />
+                <marker date="1494254114649" expanded="true" signature="1346:1407" ph="DELETE FROM " />
+                <marker date="1494254114649" expanded="true" signature="1346:1446" ph="DELETE FROM " />
+                <marker date="1494254114649" expanded="true" signature="1539:1607" ph="DELETE FROM " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EventMapper.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="EventMapper.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/atlassian/tutorial/macro/EventMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="27" column="123" selection-start-line="27" selection-start-column="123" selection-end-line="27" selection-end-column="123" />
+            <state relative-caret-position="212">
+              <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
               <folding>
-                <marker date="1494250636941" expanded="true" signature="338:485" ph="CREATE TABLE... IF" />
-                <marker date="1494250636941" expanded="true" signature="1016:1106" ph="SELECT Confl... outlookuidtable" />
-                <marker date="1494250636941" expanded="true" signature="1230:1341" ph="INSERT INTO OutlookUIDtable... " />
+                <element signature="imports" expanded="true" />
+                <marker date="1494254457041" expanded="true" signature="363:510" ph="CREATE TABLE... IF" />
+                <marker date="1494254457041" expanded="true" signature="1107:1197" ph="SELECT Confl... outlookuidtable" />
+                <marker date="1494254457041" expanded="true" signature="1321:1432" ph="INSERT INTO OutlookUIDtable... " />
               </folding>
             </state>
           </provider>
@@ -121,8 +122,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/atlassian/tutorial/macro/eventInserter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/atlassian/tutorial/macro/eventParameters.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/atlassian/tutorial/macro/ExCon.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/atlassian/tutorial/macro/EventMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/atlassian/tutorial/macro/EventDeleter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/atlassian/tutorial/macro/EventMapper.java" />
       </list>
     </option>
   </component>
@@ -728,15 +729,15 @@
       <workItem from="1493037893479" duration="3391000" />
       <workItem from="1493736839315" duration="933000" />
       <workItem from="1493895997680" duration="15687000" />
-      <workItem from="1494225819658" duration="22244000" />
+      <workItem from="1494225819658" duration="23045000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42255000" />
+    <option name="totallyTimeSpent" value="43056000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="-25" width="1368" height="794" extended-state="1" />
+    <frame x="-1" y="-25" width="1368" height="794" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -841,9 +842,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1494250636941" expanded="true" signature="338:485" ph="CREATE TABLE... IF" />
-            <marker date="1494250636941" expanded="true" signature="1016:1106" ph="SELECT Confl... outlookuidtable" />
-            <marker date="1494250636941" expanded="true" signature="1230:1341" ph="INSERT INTO OutlookUIDtable... " />
+            <element signature="imports" expanded="true" />
+            <marker date="1494254457041" expanded="true" signature="363:510" ph="CREATE TABLE... IF" />
+            <marker date="1494254457041" expanded="true" signature="1107:1197" ph="SELECT Confl... outlookuidtable" />
+            <marker date="1494254457041" expanded="true" signature="1321:1432" ph="INSERT INTO OutlookUIDtable... " />
           </folding>
         </state>
       </provider>
@@ -1140,7 +1142,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/atlassian/tutorial/macro/ExCon.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-836">
+        <state relative-caret-position="-782">
           <caret line="103" column="61" selection-start-line="103" selection-start-column="61" selection-end-line="103" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1148,29 +1150,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/atlassian/tutorial/macro/EventMapper.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/atlassian/tutorial/macro/EventDeleter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="27" column="123" selection-start-line="27" selection-start-column="123" selection-end-line="27" selection-end-column="123" />
+        <state relative-caret-position="302">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding>
-            <marker date="1494250636941" expanded="true" signature="338:485" ph="CREATE TABLE... IF" />
-            <marker date="1494250636941" expanded="true" signature="1016:1106" ph="SELECT Confl... outlookuidtable" />
-            <marker date="1494250636941" expanded="true" signature="1230:1341" ph="INSERT INTO OutlookUIDtable... " />
+            <element signature="imports" expanded="true" />
+            <marker date="1494254114649" expanded="true" signature="329:378" ph="SELECT * Out... outlookuidtable" />
+            <marker date="1494254114649" expanded="true" signature="1130:1212" ph="SELECT Confl... outlookuidtable" />
+            <marker date="1494254114649" expanded="true" signature="1346:1407" ph="DELETE FROM " />
+            <marker date="1494254114649" expanded="true" signature="1346:1446" ph="DELETE FROM " />
+            <marker date="1494254114649" expanded="true" signature="1539:1607" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/atlassian/tutorial/macro/EventDeleter.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/atlassian/tutorial/macro/EventMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        <state relative-caret-position="212">
+          <caret line="24" column="47" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1494253617245" expanded="true" signature="329:378" ph="SELECT * Out... outlookuidtable" />
-            <marker date="1494253617245" expanded="true" signature="1052:1134" ph="SELECT Confl... outlookuidtable" />
-            <marker date="1494253617245" expanded="true" signature="1268:1329" ph="DELETE FROM " />
-            <marker date="1494253617245" expanded="true" signature="1268:1368" ph="DELETE FROM " />
-            <marker date="1494253617245" expanded="true" signature="1461:1529" ph="DELETE FROM " />
+            <marker date="1494254457041" expanded="true" signature="363:510" ph="CREATE TABLE... IF" />
+            <marker date="1494254457041" expanded="true" signature="1107:1197" ph="SELECT Confl... outlookuidtable" />
+            <marker date="1494254457041" expanded="true" signature="1321:1432" ph="INSERT INTO OutlookUIDtable... " />
           </folding>
         </state>
       </provider>

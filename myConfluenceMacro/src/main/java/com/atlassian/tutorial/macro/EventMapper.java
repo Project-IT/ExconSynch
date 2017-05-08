@@ -1,6 +1,7 @@
 package com.atlassian.tutorial.macro;
 
 import java.sql.*;
+import java.util.Random;
 
 /**
  * Created by alexander on 2017-05-05.
@@ -17,10 +18,10 @@ public class EventMapper {
 
     public boolean tableMap(String OutlookUID, Connection myConn, EventUpdater eu, eventParameters ep) throws SQLException {
 
-        double rnd = Math.random() * 1000000;
-        int irnd = (int) rnd;
-        String NewVEVUID = String.valueOf(irnd);
-        System.out.println(NewVEVUID);
+        Random random = new Random();
+        int value = random.nextInt(999999999)+1000000000;
+        String NewVEVUID = (ep.created + String.valueOf(value) + "@130.229.172.50"); //VEVENT UID (after "@" put the IP of the host)
+
         eventInserter ei = new eventInserter();
         Statement stmt = myConn.createStatement();
         PreparedStatement preparedStatement;
