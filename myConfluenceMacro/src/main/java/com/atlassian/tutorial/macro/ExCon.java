@@ -158,8 +158,9 @@ public class ExCon implements Macro {
                 test.setTimeZone(TimeZone.getTimeZone("UTC"));
                 Date date = new Date();
                 //Create a random unique value for each event that is in the calendar of Outlook
-                double random = Math.random() * 1000000000;
-                ep.setVevent_uid(test.format(date) + String.valueOf(random)  + "@130.229.188.219");//VEVENT UID
+            	Random random = new Random();
+                int value = random.nextInt(999999999)+1000000000;
+                ep.setVevent_uid(test.format(date) + String.valueOf(value) + "@130.229.172.50");	//VEVENT UID (after "@" put the IP of the host)
                 ei.insert(ep, myConn);
             }
             myConn.close();
