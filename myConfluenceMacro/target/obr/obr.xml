@@ -1,7 +1,7 @@
-<repository lastmodified='20170505050207.316'>
+<repository lastmodified='20170508013234.446'>
   <resource id='com.atlassian.tutorial.myConfluenceMacro/1.0.0.SNAPSHOT' symbolicname='com.atlassian.tutorial.myConfluenceMacro' presentationname='myConfluenceMacro' uri='myConfluenceMacro-1.0.0-SNAPSHOT.jar' version='1.0.0.SNAPSHOT'>
     <description>This is the com.atlassian.tutorial:myConfluenceMacro plugin for Atlassian Confluence.</description>
-    <size>4565652</size>
+    <size>4567193</size>
     <documentation>http://developer.atlassian.com/</documentation>
     <capability name='bundle'>
       <p n='symbolicname' v='com.atlassian.tutorial.myConfluenceMacro'/>

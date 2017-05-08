@@ -109,7 +109,8 @@ public class ExCon implements Macro {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                ed.outlookIDs [i] = appt.getICalUid();
+                ed.outlookIDs.add(appt.getICalUid());
+
                 fromOutlook = appt.getSubject();
 
                 ep.setAll_day("0");                //all day 1
@@ -165,6 +166,7 @@ public class ExCon implements Macro {
                 System.out.println(ep.getSummary());
                 i++;
             }
+            ed.delete(myConn); //clean up database
             myConn.close();
         } catch (Exception exc) {
             exc.printStackTrace();

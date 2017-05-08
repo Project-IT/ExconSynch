@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
-Atlassian-Build-Date: 2017-05-05T17:01:57+0200
+Atlassian-Build-Date: 2017-05-08T13:32:23+0200
 Atlassian-Plugin-Key: com.atlassian.tutorial.myConfluenceMacro
-Bnd-LastModified: 1493996524467
+Bnd-LastModified: 1494243151493
 Build-Jdk: 1.8.0_111
 Built-By: alexander
 Bundle-Description: This is the com.atlassian.tutorial:myConfluenceMacro
