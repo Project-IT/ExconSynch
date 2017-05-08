@@ -109,6 +109,7 @@ public class ExCon implements Macro {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+
                 ed.outlookIDs.add(appt.getICalUid());
 
                 fromOutlook = appt.getSubject();

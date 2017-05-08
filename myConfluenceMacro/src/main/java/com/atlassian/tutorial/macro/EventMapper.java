@@ -25,7 +25,7 @@ public class EventMapper {
         Statement stmt = myConn.createStatement();
         PreparedStatement preparedStatement;
 
-        preparedStatement = myConn.prepareStatement("SELECT ConfluenceUID FROM confluence.outlookuidtable WHERE +'" + OutlookUID + "'");
+        preparedStatement = myConn.prepareStatement("SELECT ConfluenceUID FROM confluence.outlookuidtable WHERE OutlookUID='" + OutlookUID + "'");
         ResultSet myRs = preparedStatement.executeQuery();
 
         if (!myRs.next()) {

@@ -8,40 +8,45 @@ import java.util.ArrayList;
  */
 public class EventDeleter {
 
-    ArrayList<String> outlookIDs;
+    ArrayList outlookIDs = new ArrayList();
 
     public void delete(Connection myConn) throws SQLException {
 
-        PreparedStatement ps = myConn.prepareStatement("SELECT * OutlookUID FROM confluence.outlookuidtable");
+        PreparedStatement ps = myConn.prepareStatement("SELECT OutlookUID FROM confluence.outlookuidtable");
         ResultSet rs = ps.executeQuery();
-        int j = 0;
 
-        ArrayList<String> tableIDs = null;
+        ArrayList tableIDs = new ArrayList();
 
         while (rs.next()) {
-            tableIDs.add(rs.getString(j));
-            j++;
+            tableIDs.add(rs.getString(1));
         }
 
-        tableIDs.removeIf(s -> s.equals(Outloo));
+        for (Object outlookID : outlookIDs) {
+            for (int k = 0; k < tableIDs.size(); k++) {
+                if (outlookID.equals(tableIDs.get(k))) {
+                    tableIDs.remove(k);
+                }
+            }
+        }
 
         Statement stmt = myConn.createStatement();
 
         //loop through remaining IDs - delete correct events
-        if (tableIDs != null) {
-            for (String ID : tableIDs) {
+        if (tableIDs.size() != 0) {
+            for (Object ID : tableIDs) {
 
-                String sqlDel = "DELETE FROM confluence.outlookuidtable WHERE OutlookUID='" + ID + "'";
-                stmt.executeUpdate(sqlDel);
-
-                PreparedStatement ps2 = myConn.prepareStatement("SELECT * OutlookUID FROM confluence.outlookuidtable WHERE OutlookUID='" + ID + "'");
+                PreparedStatement ps2 = myConn.prepareStatement("SELECT ConfluenceUID FROM confluence.outlookuidtable WHERE OutlookUID='" + ID + "'");
                 ResultSet rs2 = ps2.executeQuery();
 
-                String calendarDel = "DELETE FROM confluence.ao_950dc3_tc_events WHERE ConfluenceUID=" + rs2.getString("ConfluenceUID");
-                stmt.executeUpdate(calendarDel);
+                if (rs2.next()) {
 
+                    String calendarDel = "DELETE FROM confluence.ao_950dc3_tc_events WHERE VEVENT_UID='" + rs2.getString("ConfluenceUID") + "'";
+                    stmt.executeUpdate(calendarDel);
+                    String sqlDel = "DELETE FROM confluence.outlookuidtable WHERE OutlookUID='" + ID + "'";
+                    stmt.executeUpdate(sqlDel);
+
+                }
             }
         }
     }
-
 }
