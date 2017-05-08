@@ -4,4 +4,5 @@
 .idea/kotlinc.xml
 .idea/libraries/
 myConfluenceMacro/target/dependency-maven-plugin-markers/org.apache.tomcat-apache-tomcat-zip-windows-x64-8.0.36-atlassian-hosted.marker
-
+myConfluenceMacro/target/confluence/
+myConfluenceMacro/target/container/
