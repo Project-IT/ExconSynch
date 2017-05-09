@@ -27,6 +27,7 @@
     	<parameters>
     		<parameter name="Username" type="string" />
     		<parameter name="Password" type="string" />
+            <parameter name="CalendarID" type="string" />
     	</parameters>
     </xhtml-macro>
     

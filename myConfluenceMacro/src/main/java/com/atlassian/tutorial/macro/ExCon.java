@@ -23,6 +23,8 @@ import java.text.SimpleDateFormat;
 import java.sql.*;
 import java.util.Date;
 
+import static java.awt.Color.pink;
+
 
 public class ExCon implements Macro {
 
@@ -31,6 +33,7 @@ public class ExCon implements Macro {
         String fromOutlook = "";
         String username = map.get("Username");
         String password = map.get("Password");
+        String calendarID = map.get("CalendarID");
 
 
         // Specifies Exchange version, (any newer works as well)
@@ -88,12 +91,15 @@ public class ExCon implements Macro {
         eventParameters ep = new eventParameters();
         Connection myConn;
         eventInserter ei = new eventInserter();
+        String vacationID= null;
         try {
             ep.setUser("tcomkproj2017");
             ep.setPassword("tcomkproj2017");
             ep.setdbUrl("localhost:3306/confluence");
             myConn = DriverManager.getConnection(ep.getDbUrl(), ep.getUser(), ep.getPassword());
             for (Appointment appt : findResults.getItems()) {
+
+
                 // Make a new Event object to hold data of one appointment
                 // Loads appt
                 try {
@@ -101,23 +107,13 @@ public class ExCon implements Macro {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-               /*  Make a new Event object to hold data of one appointment
-                Event event = new Event();*/
-                try {
-
-                    fromOutlook = appt.getSubject().toString();
-
-                    System.out.println(fromOutlook);
-                } catch (ServiceLocalException e) {
-                    e.printStackTrace();
-                }
                 ep.setAll_day("0");                //all day 1
                 try {
                     ep.setCreated(ConvertTime(appt.getDateTimeCreated(), true));   //created
-                } catch(ParseException x){
+                } catch (ParseException x) {
                     x.printStackTrace();
                 }
-                    ep.setDescription("");                //description
+                ep.setDescription("");                //description
                 try {
                     ep.setEnd(ConvertTime(appt.getEnd(), true));   //End
                 } catch (ParseException x) {
@@ -125,7 +121,7 @@ public class ExCon implements Macro {
                 }
                 try {
                     ep.setLast_modified(ConvertTime(appt.getLastModifiedTime(), true));   //Last_Modified
-                } catch (ParseException x){
+                } catch (ParseException x) {
                     x.printStackTrace();
                 }
                 ep.setLocation("");      //Location
@@ -139,12 +135,31 @@ public class ExCon implements Macro {
                 } catch (ParseException x) {
                     x.printStackTrace();
                 }
-                ep.setSub_calendar_id("dfa1eb25-ef12-42c8-abcf-71dec96b58ac");//SUB_CALENDAR_ID
-                ep.setSummary(fromOutlook);                //SUMMARY
-                ep.setUrl("NULL");           //URL
+                //SUB_CALENDAR_ID
+                //this is for different vacation event type
+
+                if (appt.getCategories().toString().equals("Orange category,")) // for Vacation events
+                {
+
+                    vacationID = SubCalendarID(calendarID, myConn , "Orange");}
+
+                else {
+                    vacationID = SubCalendarID(calendarID, myConn , "Blue");}
+
+                try { ep.setSub_calendar_id(vacationID);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 try {
-                    ep.setUtc_end(ConvertTime(appt.getStart(), false));  //UTC_END
-                    ep.setUtc_start(ConvertTime(appt.getStart(), false));  //UTC_START
+                    ep.setSummary(appt.getSubject().toString());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                //ep.setUrl("NULL");           //URL
+                ep.setUrl(appt.getMeetingWorkspaceUrl());
+                try {
+                    ep.setUtc_end(ConvertTime(appt.getEnd(), false));  //UTC_END
+                    //ep.setUtc_start(ConvertTime(appt.getStart(), false));  //UTC_START
                 } catch (ParseException x) {
                     x.printStackTrace();
                 }
@@ -153,20 +168,26 @@ public class ExCon implements Macro {
                 } catch (ParseException x) {
                     x.printStackTrace();
                 }
-                // Get current time 
-                SimpleDateFormat test = new SimpleDateFormat("yyyyMMdd'T'HHmmss'Z--'"); 
+                // Get current time
+                SimpleDateFormat test = new SimpleDateFormat("yyyyMMdd'T'HHmmss'Z--'");
                 test.setTimeZone(TimeZone.getTimeZone("UTC"));
-                Date date = new Date();
+                Date date = appt.getICalDateTimeStamp();
                 //Create a random unique value for each event that is in the calendar of Outlook
                 double random = Math.random() * 1000000000;
-                ep.setVevent_uid(test.format(date) + String.valueOf(random)  + "@130.229.188.219");//VEVENT UID
+                ep.setVevent_uid(test.format(date) + String.valueOf(random) + "@130.229.188.219");//VEVENT UID
                 ei.insert(ep, myConn);
             }
+
+
+
+
+
             myConn.close();
-        } catch (Exception exc) {
+        }
+        catch (Exception exc) {
             exc.printStackTrace();
         }
-        return fromOutlook;
+        return  vacationID;
     }
 
 
@@ -178,7 +199,7 @@ public class ExCon implements Macro {
         }
 
     }
-    
+
     /* Converts the time acquired from the specific Outlook event to the compatible Unix Epoch time format.
        time -> time & date of the event
        localtime -> Determines whether or not the time is to be local or UTC
@@ -205,8 +226,43 @@ public class ExCon implements Macro {
             return String.valueOf(date.getTime());
         }
     }
+    /* It return the SubcalendarID of given  ParentID*/
+    private static String SubCalendarID(String parentID , Connection myConn ,String color ){
+
+        String resultID= " ";
+        ResultSet myRs ;
+
+        try {
+            //Create a statement
+            Statement myStm = myConn.createStatement();
+            // Get the child-ID of the parentID to crrosponding color
+            if ( color.equals("Orange")) {
+                myRs = myStm.executeQuery("SELECT ID FROM confluence.ao_950dc3_tc_subcals WHERE PARENT_ID= '" + parentID + "' AND COLOUR='subcalendar-orange';");
+                while (myRs.next()) {
+
+                    resultID = myRs.getString("ID");
+                    return   resultID;
+                }
+            }
+            else
+            { myRs = myStm.executeQuery( "SELECT ID FROM confluence.ao_950dc3_tc_subcals WHERE PARENT_ID= '"+parentID+"' AND COLOUR='subcalendar-blue';");
+                while (myRs.next()) {
+
+                    resultID =myRs.getString("ID");
+                    return   resultID;
+                }
+            }
 
 
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+        return   resultID;
+
+
+    }
     public BodyType getBodyType() {
         return BodyType.NONE;
     }
