@@ -15,7 +15,7 @@
     </organization>
 
     <name>ExCon</name>
-    <description>This is the com.atlassian.tutorial:myConfluenceMacro plugin for Atlassian Confluence.</description>
+    <description>This is the ExCon calendar plugin for Atlassian Confluence.</description>
     <packaging>atlassian-plugin</packaging>
 
     <dependencies>
