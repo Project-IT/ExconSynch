@@ -14,7 +14,7 @@
         <url>https://tcomkproj2017.wixsite.com/project</url>
     </organization>
 
-    <name>ExCon</name>
+    <name>ExCon Plugin</name>
     <description>This is the ExCon calendar plugin for Atlassian Confluence.</description>
     <packaging>atlassian-plugin</packaging>
 
