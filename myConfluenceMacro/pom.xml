@@ -14,7 +14,7 @@
         <url>https://tcomkproj2017.wixsite.com/project</url>
     </organization>
 
-    <name>ExCon PLugin</name>
+    <name>ExCon</name>
     <description>This is the com.atlassian.tutorial:myConfluenceMacro plugin for Atlassian Confluence.</description>
     <packaging>atlassian-plugin</packaging>
 
