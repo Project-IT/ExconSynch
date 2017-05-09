@@ -88,7 +88,7 @@ public class ExCon implements Macro {
 
         eventParameters ep = new eventParameters();
         Connection myConn;
-        eventInserter ei = new eventInserter();
+
         try {
             ep.setUser("tcomkproj2017");
             ep.setPassword("tcomkproj2017");
@@ -99,7 +99,6 @@ public class ExCon implements Macro {
             em.tableMaker(myConn);
             EventUpdater eu = new EventUpdater();
             EventDeleter ed = new EventDeleter();
-            int i = 0;
 
             for (Appointment appt : findResults.getItems()) {
                 // Make a new Event object to hold data of one appointment
@@ -109,8 +108,6 @@ public class ExCon implements Macro {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-
-                ed.outlookIDs.add(appt.getICalUid());
 
                 fromOutlook = appt.getSubject();
 
@@ -156,16 +153,21 @@ public class ExCon implements Macro {
                 } catch (ParseException x) {
                     x.printStackTrace();
                 }
-                // Get current time
-                SimpleDateFormat test = new SimpleDateFormat("yyyyMMdd'T'HHmmss'Z--'");
-                test.setTimeZone(TimeZone.getTimeZone("UTC"));
-                Date date = new Date();
-                //Create a random unique value for each event that is in the calendar of Outlook
-                ep.setVevent_uid(appt.getICalUid());
+
+                //work here
+                if (appt.getIsRecurring()) {
+                    Random random = new Random();
+                    int value = random.nextInt(999999999) + 1000000000;
+                    String c = String.valueOf(value);
+                    ep.setVevent_uid(c);
+                    ed.outlookIDs.add(c);
+                } else {
+                    ep.setVevent_uid(appt.getICalUid());
+                    ed.outlookIDs.add(appt.getICalUid());
+                }
+                // stop working
 
                 em.tableMap(ep.getVevent_uid(), myConn, eu, ep);
-                System.out.println(ep.getSummary());
-                i++;
             }
             ed.delete(myConn); //clean up database
             myConn.close();
