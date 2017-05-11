@@ -139,7 +139,26 @@ public class ExCon implements Macro {
                 } catch (ParseException x) {
                     x.printStackTrace();
                 }
-                ep.setSub_calendar_id("dfa1eb25-ef12-42c8-abcf-71dec96b58ac");//SUB_CALENDAR_ID
+
+                //this is for different event types:
+                        //this is for type "Leave"
+                         if (appt.getCategories().toString().equals("Orange category,")){
+                             ep.setSub_calendar_id("5031d5f2-9a19-45ef-8b8c-1ee0d8928157");}
+
+                         //this is for type "Travel"
+                        else if(appt.getCategories().toString().equals("Yellow category,")){
+                            ep.setSub_calendar_id("5044d0e1-7b19-40f6-852f-ba718d3d3c20");}
+
+
+                        //this is for type "Birthday"
+                        else if(appt.getCategories().toString().equals("Red category,")){
+                            ep.setSub_calendar_id("2e749c4c-3c52-4442-9c8a-be3260a2f9d3");}
+
+                        //this is for type "Event"
+                        else {
+                            ep.setSub_calendar_id("dfa1eb25-ef12-42c8-abcf-71dec96b58ac");}
+
+
                 ep.setSummary(fromOutlook);                //SUMMARY
                 ep.setUrl("NULL");           //URL
                 try {

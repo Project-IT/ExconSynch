@@ -1,8 +1,8 @@
-/home/alexander/Documents/ExconSynch/myConfluenceMacro/src/main/java/com/atlassian/tutorial/macro/eventParameters.java
-/home/alexander/Documents/ExconSynch/myConfluenceMacro/src/main/java/com/atlassian/tutorial/macro/eventInserter.java
-/home/alexander/Documents/ExconSynch/myConfluenceMacro/src/main/java/com/atlassian/tutorial/macro/Event.java
-/home/alexander/Documents/ExconSynch/myConfluenceMacro/src/main/java/com/atlassian/tutorial/macro/EventVerifier.java
-/home/alexander/Documents/ExconSynch/myConfluenceMacro/src/main/java/com/atlassian/tutorial/macro/ExCon.java
-/home/alexander/Documents/ExconSynch/myConfluenceMacro/src/main/java/com/atlassian/tutorial/api/MyPluginComponent.java
-/home/alexander/Documents/ExconSynch/myConfluenceMacro/src/main/java/com/atlassian/tutorial/macro/dbParameters.java
-/home/alexander/Documents/ExconSynch/myConfluenceMacro/src/main/java/com/atlassian/tutorial/impl/MyPluginComponentImpl.java
+/Users/KataMar/KTH/Year2/Period4_2017/Project_course/GitHub/ExconSynch/myConfluenceMacro/src/main/java/com/atlassian/tutorial/impl/MyPluginComponentImpl.java
+/Users/KataMar/KTH/Year2/Period4_2017/Project_course/GitHub/ExconSynch/myConfluenceMacro/src/main/java/com/atlassian/tutorial/macro/Event.java
+/Users/KataMar/KTH/Year2/Period4_2017/Project_course/GitHub/ExconSynch/myConfluenceMacro/src/main/java/com/atlassian/tutorial/macro/eventParameters.java
+/Users/KataMar/KTH/Year2/Period4_2017/Project_course/GitHub/ExconSynch/myConfluenceMacro/src/main/java/com/atlassian/tutorial/macro/ExCon.java
+/Users/KataMar/KTH/Year2/Period4_2017/Project_course/GitHub/ExconSynch/myConfluenceMacro/src/main/java/com/atlassian/tutorial/macro/eventInserter.java
+/Users/KataMar/KTH/Year2/Period4_2017/Project_course/GitHub/ExconSynch/myConfluenceMacro/src/main/java/com/atlassian/tutorial/api/MyPluginComponent.java
+/Users/KataMar/KTH/Year2/Period4_2017/Project_course/GitHub/ExconSynch/myConfluenceMacro/src/main/java/com/atlassian/tutorial/macro/dbParameters.java
+/Users/KataMar/KTH/Year2/Period4_2017/Project_course/GitHub/ExconSynch/myConfluenceMacro/src/main/java/com/atlassian/tutorial/macro/EventVerifier.java

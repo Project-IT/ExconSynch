@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/ExCon.iml" filepath="$PROJECT_DIR$/.idea/ExCon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OutlookInformationDump/KTH.iml" filepath="$PROJECT_DIR$/OutlookInformationDump/KTH.iml" />
       <module fileurl="file://$PROJECT_DIR$/myConfluenceMacro/myConfluenceMacro.iml" filepath="$PROJECT_DIR$/myConfluenceMacro/myConfluenceMacro.iml" />
     </modules>
   </component>
